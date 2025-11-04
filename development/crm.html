@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>📊 CRM System - Управление клиентами</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background: #2c3e50; color: white; }
+        .sidebar { width: 250px; height: 100vh; background: #34495e; float: left; padding: 20px; position: fixed; }
+        .content { margin-left: 270px; padding: 20px; }
+        .menu-item { padding: 15px; margin: 5px 0; background: #3498db; cursor: pointer; border-radius: 5px; transition: background 0.3s; }
+        .menu-item:hover { background: #2980b9; }
+        .lead-card { background: white; color: #2c3e50; padding: 15px; margin: 10px 0; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .status-new { color: #27ae60; font-weight: bold; }
+        .status-progress { color: #f39c12; font-weight: bold; }
+        .status-closed { color: #7f8c8d; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>📊 CRM System</h2>
+        <p>Порт 8081</p>
+        <div class="menu-item" onclick="showSection('leads')">👥 Управление лидами</div>
+        <div class="menu-item" onclick="showSection('clients')">💼 База клиентов</div>
+        <div class="menu-item" onclick="showSection('analytics')">📈 Аналитика</div>
+        <div class="menu-item" onclick="showSection('tasks')">✅ Задачи</div>
+    </div>
+    
+    <div class="content">
+        <div id="leads-section">
+            <h1>👥 Управление лидами</h1>
+            
+            <div class="lead-card">
+                <h3>Иван Иванов</h3>
+                <p>📧 ivan@mail.ru | 📞 +7 999 123-45-67</p>
+                <p>Источник: Веб-сайт | Дата: 04.11.2025</p>
+                <p>Статус: <span class="status-new">Новый лид</span></p>
+                <button style="background: #27ae60; color: white; border: none; padding: 5px 10px; border-radius: 3px; margin: 5px;">Принять в работу</button>
+            </div>
+            
+            <div class="lead-card">
+                <h3>Петр Петров</h3>
+                <p>📧 petr@gmail.com | 📞 +7 999 765-43-21</p>
+                <p>Источник: Социальные сети | Дата: 03.11.2025</p>
+                <p>Статус: <span class="status-progress">В работе</span></p>
+                <button style="background: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 3px; margin: 5px;">Завершить</button>
+            </div>
+            
+            <div class="lead-card">
+                <h3>Мария Сидорова</h3>
+                <p>📧 maria@yandex.ru | 📞 +7 999 555-44-33</p>
+                <p>Источник: Рекламная кампания | Дата: 02.11.2025</p>
+                <p>Статус: <span class="status-closed">Завершено</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(section) {
+            alert('Переход в раздел: ' + section);
+            // В реальной системе здесь будет переключение между разделами
+        }
+    </script>
+</body>
+</html>

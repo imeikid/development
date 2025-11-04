@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📊 CRM System - Управление клиентами</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f7fafc;
+            color: #2d3748;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .app-container {
+            display: flex;
+            flex: 1;
+            min-height: 100vh;
+        }
+        .sidebar {
+            width: 280px;
+            min-width: 280px;
+            background: linear-gradient(135deg, #2c5282 0%, #3182ce 100%);
+            color: white;
+            overflow-y: auto;
+            transition: all 0.3s ease;
+        }
+        .logo {
+            padding: 25px 20px;
+            border-bottom: 1px solid #4a90e2;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            background: inherit;
+            z-index: 10;
+        }
+        .logo h1 {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+        .logo .port {
+            background: #e53e3e;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.7em;
+        }
+        .menu {
+            padding: 15px 0;
+        }
+        .menu-item {
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+            font-size: 0.95em;
+        }
+        .menu-item:hover, .menu-item.active {
+            background: rgba(255,255,255,0.1);
+            border-left-color: #68d391;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: #f7fafc;
+        }
+        .header {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            text-align: center;
+            border-top: 4px solid #3182ce;
+        }
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            margin: 8px 0;
+            color: #2d3748;
+        }
+        .leads-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .lead-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            border-left: 5px solid #3182ce;
+            transition: transform 0.3s ease;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        .lead-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+        }
+        .lead-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .lead-name {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2d3748;
+            word-break: break-word;
+        }
+        .lead-meta {
+            color: #718096;
+            margin-bottom: 12px;
+            line-height: 1.5;
+            font-size: 0.9em;
+        }
+        .status-badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .status-new { background: #c6f6d5; color: #276749; }
+        .status-progress { background: #fef5e7; color: #c05621; }
+        .status-closed { background: #e2e8f0; color: #4a5568; }
+        .actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85em;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+        }
+        .btn-primary { background: #3182ce; color: white; }
+        .btn-success { background: #38a169; color: white; }
+        .btn-warning { background: #ed8936; color: white; }
+        .btn-danger { background: #e53e3e; color: white; }
+        .btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Адаптивность для мобильных устройств */
+        @media (max-width: 768px) {
+            .app-container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                min-width: 100%;
+                max-height: 200px;
+            }
+            .menu {
+                display: flex;
+                overflow-x: auto;
+                padding: 10px 0;
+            }
+            .menu-item {
+                flex: 0 0 auto;
+                white-space: nowrap;
+                border-left: none;
+                border-bottom: 3px solid transparent;
+            }
+            .menu-item.active {
+                border-left: none;
+                border-bottom-color: #68d391;
+            }
+            .content {
+                padding: 15px;
+            }
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            .stat-card {
+                padding: 15px;
+            }
+            .stat-number {
+                font-size: 1.5em;
+            }
+            .lead-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .actions {
+                justify-content: center;
+            }
+            .btn {
+                flex: 1;
+                min-width: 120px;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats {
+                grid-template-columns: 1fr;
+            }
+            .lead-card {
+                padding: 15px;
+            }
+            .btn {
+                min-width: 100px;
+                font-size: 0.8em;
+                padding: 6px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <div class="sidebar">
+            <div class="logo">
+                <h1>📊 CRM System</h1>
+                <div class="port">Порт 8081</div>
+            </div>
+            
+            <div class="menu">
+                <div class="menu-item active">
+                    <span>👥</span> Управление лидами
+                </div>
+                <div class="menu-item">
+                    <span>💼</span> База клиентов
+                </div>
+                <div class="menu-item">
+                    <span>📈</span> Аналитика продаж
+                </div>
+                <div class="menu-item">
+                    <span>✅</span> Задачи и сделки
+                </div>
+                <div class="menu-item">
+                    <span>📊</span> Отчеты
+                </div>
+                <div class="menu-item">
+                    <span>⚙️</span> Настройки
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="header">
+                <h1>👥 Управление лидами</h1>
+                <p>Эффективное управление клиентской базой и воронкой продаж</p>
+            </div>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <div>Всего лидов</div>
+                    <div class="stat-number">156</div>
+                    <div style="color: #38a169;">+12 за неделю</div>
+                </div>
+                <div class="stat-card">
+                    <div>В работе</div>
+                    <div class="stat-number">42</div>
+                    <div style="color: #ed8936;">Активные</div>
+                </div>
+                <div class="stat-card">
+                    <div>Конверсия</div>
+                    <div class="stat-number">8.2%</div>
+                    <div style="color: #3182ce;">Цель: 10%</div>
+                </div>
+                <div class="stat-card">
+                    <div>Доход</div>
+                    <div class="stat-number">324K ₽</div>
+                    <div style="color: #38a169;">+24% к прошлому месяцу</div>
+                </div>
+            </div>
+
+            <div class="leads-grid">
+                <div class="lead-card">
+                    <div class="lead-header">
+                        <div class="lead-name">Иван Иванов</div>
+                        <span class="status-badge status-new">НОВЫЙ</span>
+                    </div>
+                    <div class="lead-meta">
+                        📧 ivan@mail.ru<br>
+                        📞 +7 999 123-45-67<br>
+                        🌐 Источник: Веб-сайт<br>
+                        📅 Дата: 04.11.2025 14:30
+                    </div>
+                    <p>Клиент заинтересован в премиум пакете услуг. Оставил заявку на консультацию.</p>
+                    <div class="actions">
+                        <button class="btn btn-primary">📞 Позвонить</button>
+                        <button class="btn btn-success">✉️ Написать</button>
+                        <button class="btn btn-warning">✅ В работу</button>
+                    </div>
+                </div>
+
+                <div class="lead-card">
+                    <div class="lead-header">
+                        <div class="lead-name">Петр Петров</div>
+                        <span class="status-badge status-progress">В РАБОТЕ</span>
+                    </div>
+                    <div class="lead-meta">
+                        📧 petr@gmail.com<br>
+                        📞 +7 999 765-43-21<br>
+                        🌐 Источник: Социальные сети<br>
+                        📅 Дата: 03.11.2025 11:15
+                    </div>
+                    <p>Проведена первая консультация. Клиент изучает коммерческое предложение.</p>
+                    <div class="actions">
+                        <button class="btn btn-primary">📞 Напомнить</button>
+                        <button class="btn btn-success">📧 Отправить КП</button>
+                        <button class="btn btn-danger">❌ Отказ</button>
+                    </div>
+                </div>
+
+                <div class="lead-card">
+                    <div class="lead-header">
+                        <div class="lead-name">Мария Сидорова</div>
+                        <span class="status-badge status-closed">ЗАВЕРШЕНО</span>
+                    </div>
+                    <div class="lead-meta">
+                        📧 maria@yandex.ru<br>
+                        📞 +7 999 555-44-33<br>
+                        🌐 Источник: Рекламная кампания<br>
+                        📅 Дата: 02.11.2025 09:45
+                    </div>
+                    <p>Успешно закрытая сделка. Клиент приобрел пакет "Бизнес". Доход: 85,000 ₽</p>
+                    <div class="actions">
+                        <button class="btn btn-primary">📊 Отчет</button>
+                        <button class="btn btn-success">🔄 Повтор</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelectorAll('.menu-item').forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

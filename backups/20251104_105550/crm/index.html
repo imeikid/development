@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📊 CRM System - Управление клиентами</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #ecf0f1;
+            margin: 0;
+            display: flex;
+            min-height: 100vh;
+        }
+        .sidebar {
+            width: 280px;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 30px 20px;
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #34495e;
+        }
+        .menu-item {
+            padding: 15px 20px;
+            margin: 8px 0;
+            background: #34495e;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .menu-item:hover {
+            background: #3498db;
+            transform: translateX(5px);
+        }
+        .content {
+            flex: 1;
+            padding: 30px;
+        }
+        .lead-card {
+            background: white;
+            padding: 25px;
+            margin: 15px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-left: 5px solid #3498db;
+        }
+        .status-new { color: #27ae60; font-weight: bold; }
+        .status-progress { color: #f39c12; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <h1>📊 CRM System</h1>
+            <div>Порт 8081</div>
+        </div>
+        
+        <div class="menu-item">👥 Управление лидами</div>
+        <div class="menu-item">💼 База клиентов</div>
+        <div class="menu-item">📈 Аналитика</div>
+    </div>
+
+    <div class="content">
+        <h1>👥 Управление лидами</h1>
+        
+        <div class="lead-card">
+            <h3>Иван Иванов</h3>
+            <p>📧 ivan@mail.ru | 📞 +7 999 123-45-67</p>
+            <p>Статус: <span class="status-new">Новый лид</span></p>
+        </div>
+        
+        <div class="lead-card">
+            <h3>Петр Петров</h3>
+            <p>📧 petr@gmail.com | 📞 +7 999 765-43-21</p>
+            <p>Статус: <span class="status-progress">В работе</span></p>
+        </div>
+    </div>
+</body>
+</html>

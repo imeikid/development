@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🚀 API Server - Marketing System</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f5f5f5; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .endpoint { background: #f8f9fa; padding: 15px; margin: 10px 0; border-left: 4px solid #007bff; border-radius: 5px; }
+        .method { display: inline-block; padding: 5px 10px; background: #007bff; color: white; border-radius: 3px; font-weight: bold; }
+        .get { background: #28a745; }
+        .post { background: #ffc107; color: black; }
+        .put { background: #17a2b8; }
+        .delete { background: #dc3545; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 API Server</h1>
+        <p>Маркетинговая система API - порт 8080</p>
+        
+        <div class="endpoint">
+            <span class="method get">GET</span> <strong>/api/leads</strong>
+            <p>Получить список всех лидов</p>
+            <code>curl http://212.193.26.156:8080/api/leads</code>
+        </div>
+        
+        <div class="endpoint">
+            <span class="method post">POST</span> <strong>/api/leads</strong>
+            <p>Добавить новый лид</p>
+            <code>curl -X POST http://212.193.26.156:8080/api/leads -d '{"name":"John", "email":"john@example.com"}'</code>
+        </div>
+        
+        <div class="endpoint">
+            <span class="method get">GET</span> <strong>/api/analytics</strong>
+            <p>Получить аналитику кампаний</p>
+        </div>
+        
+        <div class="endpoint">
+            <span class="method get">GET</span> <strong>/api/stats</strong>
+            <p>Статистика системы</p>
+        </div>
+        
+        <h3>📊 Статус системы</h3>
+        <div style="background: #d4edda; color: #155724; padding: 15px; border-radius: 5px;">
+            ✅ API сервер работает корректно на порту 8080
+        </div>
+    </div>
+</body>
+</html>

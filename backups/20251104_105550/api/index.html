@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔗 API Server - Marketing System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0f1419;
+            color: #ffffff;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            border-radius: 15px;
+        }
+        .header h1 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+        }
+        .header p {
+            font-size: 1.3em;
+            opacity: 0.9;
+        }
+        .endpoints {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        .endpoint {
+            background: #1a1f2e;
+            border: 1px solid #2d3748;
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+        .endpoint:hover {
+            border-color: #4299e1;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        .method {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 0.9em;
+            margin-right: 15px;
+            margin-bottom: 15px;
+        }
+        .get { background: #48bb78; color: white; }
+        .post { background: #ed8936; color: white; }
+        .put { background: #4299e1; color: white; }
+        .delete { background: #f56565; color: white; }
+        .endpoint h3 {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            color: #90cdf4;
+        }
+        .endpoint p {
+            margin-bottom: 15px;
+            color: #cbd5e0;
+        }
+        code {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            display: block;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            overflow-x: auto;
+            border-left: 4px solid #4299e1;
+        }
+        .port-badge {
+            background: #e53e3e;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            margin-left: 10px;
+        }
+        .status {
+            background: #2d3748;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 40px;
+            border: 1px solid #4a5568;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔗 API Server <span class="port-badge">Порт 8080</span></h1>
+            <p>Программный интерфейс маркетинговой системы</p>
+        </div>
+
+        <div class="endpoints">
+            <div class="endpoint">
+                <span class="method get">GET</span>
+                <h3>/api/v1/leads</h3>
+                <p>Получение списка всех лидов с поддержкой пагинации и фильтрации</p>
+                <code>curl -X GET "http://212.193.26.156:8080/api/v1/leads?page=1&limit=20&status=active"</code>
+            </div>
+
+            <div class="endpoint">
+                <span class="method post">POST</span>
+                <h3>/api/v1/leads</h3>
+                <p>Создание нового лида в системе</p>
+                <code>curl -X POST http://212.193.26.156:8080/api/v1/leads \<br>  -H "Content-Type: application/json" \<br>  -d '{"name": "Иван Иваван Иванов", "emailнов", "email": "": "ivan@mail.ruivan@mail.ru", "phone": "+799", "phone": "+79991234567"}'</code>
+            </div>
+
+            <div class="endpoint">
+                <span class="method get">GET</span>
+                <h3>/api/v1/analytics</h3>
+                <p>Аналитика маркетинговых кампаний и эффективности</p>
+                <code>curl -X GET "http://212.193.26.156:8080/api/v1/analytics?period=7d&metrics=con91234567"}'</code>
+            </div>
+
+            <div class="endpoint">
+                <span class="method get">GET</span>
+                <h3>/api/v1/analytics</h3>
+                <p>Аналитика маркетинговых кампаний и эффективности</p>
+                <code>curl -X GET "http://212.193.26.156:8080/api/v1/analytics?period=7d&metricsversion,revenue"</code>
+           =conversion,revenue"</code </div>
+
+           >
+            </div>
+
+            <div class="endpoint">
+                <span class="method put">PUT</span>
+                <h3>/api/v1/leads/{id}</h3>
+                <p>Обновление информации о конкретном лиде</p>
+                <code>curl -X PUT http://212.193.26.156:8080/api/v1/leads/123 \<br>  -H "Content-Type: application/json" \<br <div class="endpoint">
+                <span class="method put">PUT</span>
+                <h3>/api/v1/leads/{id}</h3>
+                <p>Обновление информации о конкретном лиде</p>
+                <code>curl -X PUT http://212.193.26.156:8080/api/v1/leads/123 \<br>  -H "Content-Type: application/json" \<br>  -d '{"status": "contacted",>  -d '{"status": "contacted", "notes": "Кли "notes": "Клиент заинтересован"ент заинтересован"}'</code>
+            </}'</code>
+            </divdiv>
+        </div>
+
+>
+        </div>
+
+               < <div class="status">
+            <h3>✅ APIdiv class="status">
+            <h3>✅ API Server Active</h3>
+            <p>Все endpoints готовы к использованию. Base Server Active</h3>
+            <p>Все endpoints готовы к использованию. Base URL: http:// URL: http://212.212.193.26.193.26.156:8080/api/v1</p>
+156:8080/api/v        </div>
+    </1</p>
+        </div>
+</body>
+</div>
+    </div>
+</body>
+</html>

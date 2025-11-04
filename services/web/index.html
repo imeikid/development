@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Строительство домов под ключ в Большой Ялте | Профессиональные услуги</title>
+    <meta name="description" content="Строительство домов под ключ в Большой Ялте. Полный цикл работ, современные BIM-технологии, гарантия качества. Бесплатная консультация и расчет сметы!">
+    <meta name="keywords" content="строительство под ключ Ялта, строительство домов Крым, ремонт под ключ Большая Ялта, BIM проектирование">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preload" href="css/mobile-first.css" as="style" media="(max-width: 768px)">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container">
+            <div class="logo">
+                <h1>Строительство под ключ в Большой Ялте</h1>
+            </div>
+            <nav class="nav" role="navigation">
+                <button class="nav-toggle" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="#services">Услуги</a></li>
+                    <li><a href="#portfolio">Проекты</a></li>
+                    <li><a href="#advantages">Преимущества</a></li>
+                    <li><a href="#reviews">Отзывы</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="header-phone">
+                <a href="tel:+79780000000">+7 (978) 000-00-00</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" aria-label="Главный баннер">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Строительство и ремонт под ключ в Большой Ялте</h1>
+                <p class="hero-subtitle">Используем передовые технологии BIM-проектирования. От проекта до сдачи объекта за 90 дней</p>
+                <div class="hero-features">
+                    <div class="feature">
+                        <span class="feature-icon">🏠</span>
+                        <span>Гарантия 5 лет</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">⚡</span>
+                        <span>Срок от 90 дней</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">📐</span>
+                        <span>BIM технологии</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <button class="cta-button primary" onclick="openModal('consultation')">Бесплатная консультация</button>
+                    <button class="cta-button secondary" onclick="openModal('portfolio')">Смотреть проекты</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card">
+                    <div class="card-header">
+                        <h3>Рассчитайте стоимость</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="calc-input">
+                            <label>Площадь объекта (м²)</label>
+                            <input type="range" id="areaRange" min="50" max="500" value="120">
+                            <span id="areaValue">120 м²</span>
+                        </div>
+                        <div class="calc-input">
+                            <label>Тип работ</label>
+                            <select id="workType">
+                                <option value="standart">Стандарт</option>
+                                <option value="comfort">Комфорт</option>
+                                <option value="premium">Премиум</option>
+                            </select>
+                        </div>
+                        <div class="calc-result">
+                            <strong>Примерная стоимость:</strong>
+                            <span id="costResult">2 400 000 ₽</span>
+                        </div>
+                        <button class="calc-button" onclick="openModal('calculation')">Точный расчет</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services" aria-label="Наши услуги">
+        <div class="container">
+            <h2>Наши услуги</h2>
+            <div class="services-grid">
+                <article class="service-card" data-service="construction">
+                    <div class="service-icon">🏗️</div>
+                    <h3>Строительство домов</h3>
+                    <p>Полный цикл от проектирования до сдачи объекта под ключ</p>
+                    <ul class="service-features">
+                        <li>Фундаментные работы</li>
+                        <li>Возведение стен и кровли</li>
+                        <li>Монтаж инженерных систем</li>
+                        <li>Черновая и чистовая отделка</li>
+                    </ul>
+                    <button class="service-button" onclick="openModal('service', 'construction')">Подробнее</button>
+                </article>
+
+                <article class="service-card" data-service="renovation">
+                    <div class="service-icon">🛠️</div>
+                    <h3>Ремонт под ключ</h3>
+                    <p>Капитальный и косметический ремонт любой сложности</p>
+                    <ul class="service-features">
+                        <li>Демонтажные работы</li>
+                        <li>Электрика и сантехника</li>
+                        <li>Отделочные работы</li>
+                        <li>Умный дом и автоматизация</li>
+                    </ul>
+                    <button class="service-button" onclick="openModal('service', 'renovation')">Подробнее</button>
+                </article>
+
+                <article class="service-card" data-service="design">
+                    <div class="service-icon">📐</div>
+                    <h3>Проектирование</h3>
+                    <p>BIM-технологии и 3D-визуализация вашего будущего дома</p>
+                    <ul class="service-features">
+                        <li>Архитектурное проектирование</li>
+                        <li>Конструктивные решения</li>
+                        <li>Инженерные системы</li>
+                        <li>3D визуализация и VR</li>
+                    </ul>
+                    <button class="service-button" onclick="openModal('service', 'design')">Подробнее</button>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio" aria-label="Наши проекты">
+        <div class="container">
+            <h2>Реализованные проекты</h2>
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">Все проекты</button>
+                <button class="filter-btn" data-filter="house">Дома</button>
+                <button class="filter-btn" data-filter="renovation">Ремонт</button>
+                <button class="filter-btn" data-filter="commercial">Коммерческие</button>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="house">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder">🏠 Дом в Гурзуфе</div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Дом в Гурзуфе</h3>
+                        <p>Площадь: 180 м² | Срок: 120 дней</p>
+                        <span class="portfolio-cost">3 600 000 ₽</span>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="renovation">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder">🛋 Ремонт квартиры</div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Ремонт квартиры в Ялте</h3>
+                        <p>Площадь: 85 м² | Срок: 60 дней</p>
+                        <span class="portfolio-cost">1 200 000 ₽</span>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="commercial">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder">🏪 Кафе в Алупке</div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Кафе в Алупке</h3>
+                        <p>Площадь: 150 м² | Срок: 90 дней</p>
+                        <span class="portfolio-cost">2 800 000 ₽</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section id="advantages" class="advantages" aria-label="Наши преимущества">
+        <div class="container">
+            <h2>Почему выбирают нас</h2>
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <div class="advantage-icon">🎯</div>
+                    <h3>Фиксированные сроки</h3>
+                    <p>Строгое соблюдение сроков строительства с гарантией по договору</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">💎</div>
+                    <h3>Качество материалов</h3>
+                    <p>Работаем только с проверенными поставщиками и материалами</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">👨‍💼</div>
+                    <h3>Персональный прораб</h3>
+                    <p>За каждым проектом закреплен персональный специалист</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">📊</div>
+                    <h3>Прозрачная смета</h3>
+                    <p>Никаких скрытых платежей и дополнительных расходов</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" aria-label="Призыв к действию">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Готовы начать строительство?</h2>
+                <p>Получите бесплатную консультацию и расчет стоимости вашего проекта</p>
+                <div class="cta-buttons">
+                    <button class="cta-button primary" onclick="openModal('consultation')">Получить консультацию</button>
+                    <button class="cta-button secondary" onclick="openModal('callback')">Заказать звонок</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Строительство под ключ в Большой Ялте</h3>
+                    <p>Профессиональные услуги строительства и ремонта с использованием передовых технологий</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <p>📞 <a href="tel:+79780000000">+7 (978) 000-00-00</a></p>
+                    <p>📧 <a href="mailto:info@строительство-ялта.рф">info@строительство-ялта.рф</a></p>
+                    <p>🕒 Ежедневно с 9:00 до 20:00</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Быстрые ссылки</h4>
+                    <ul>
+                        <li><a href="#services">Услуги</a></li>
+                        <li><a href="#portfolio">Проекты</a></li>
+                        <li><a href="#advantages">Преимущества</a></li>
+                        <li><a href="#contact">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Строительство под ключ в Большой Ялте. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="floating-whatsapp">
+        <a href="https://wa.me/79780000000?text=Здравствуйте!%20Хочу%20узнать%20о%20строительстве%20под%20ключ" target="_blank" aria-label="Написать в WhatsApp">
+            💬 WhatsApp
+        </a>
+    </div>
+
+    <!-- Modals -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div id="modal-body">
+                <!-- Modal content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
