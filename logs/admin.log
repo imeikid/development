@@ -1,0 +1,19 @@
+2025/11/03 21:12:16 socat[409918] E read(5, 0x634d0fc9f000, 8192): Connection reset by peer
+2025/11/03 21:12:20 socat[409928] E read(5, 0x634d0fc9f000, 8192): Connection reset by peer
+2025/11/03 21:12:21 socat[409930] E read(5, 0x634d0fc9f000, 8192): Connection reset by peer
+2025/11/03 21:12:21 socat[409934] E read(5, 0x634d0fc9f000, 8192): Connection reset by peer
+2025/11/03 21:12:43 socat[409944] E read(5, 0x634d0fc9f000, 8192): Connection reset by peer
+2025/11/03 21:12:43 socat[409946] E read(5, 0x634d0fc9f000, 8192): Connection reset by peer
+2025/11/03 21:17:11 socat[409907] W exiting on signal 15
+2025/11/03 21:19:11 socat[410304] E write(5, 0x59318d1a0000, 394): Broken pipe
+2025/11/03 21:19:11 socat[410306] E read(5, 0x59318d1a0000, 8192): Connection reset by peer
+2025/11/03 21:19:11 socat[410308] E read(5, 0x59318d1a0000, 8192): Connection reset by peer
+2025/11/03 21:19:11 socat[410310] E read(5, 0x59318d1a0000, 8192): Connection reset by peer
+2025/11/03 21:25:11 socat[410165] W exiting on signal 15
+GET / HTTP/1.1
+Host: 212.193.26.156:8090
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36
+Content-Type: application/json
+Accept-Encoding: gzip
+Connection: close
+

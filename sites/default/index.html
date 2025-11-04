@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Маркетинг Система</title>
+    <style>
+        body { font-family: Arial; margin: 40px; background: #f0f2f5; }
+        .container { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; }
+        .form-group { margin: 15px 0; }
+        input, textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
+        button { background: #007cba; color: white; padding: 12px 30px; border: none; border-radius: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Система запущена!</h1>
+        <p>Маркетинг система работает на вашем сервере.</p>
+        
+        <h3>📝 Тестовая форма:</h3>
+        <form onsubmit="alert('Форма работает!'); return false;">
+            <div class="form-group">
+                <input type="text" placeholder="Ваше имя">
+            </div>
+            <div class="form-group">
+                <input type="tel" placeholder="Телефон">
+            </div>
+            <button type="submit">Отправить</button>
+        </form>
+        
+        <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
+            <h3>🔗 Доступные сервисы:</h3>
+            <ul>
+                <li><a href="http://212.193.26.156:8000">Веб-сайт (порт 8000)</a></li>
+                <li><a href="http://212.193.26.156:8080">API (порт 8080)</a></li>
+                <li><a href="http://212.193.26.156:8081">CRM (порт 8081)</a></li>
+                <li><a href="http://212.193.26.156:8090">Админка (порт 8090)</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
