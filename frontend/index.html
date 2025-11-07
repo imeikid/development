@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Панель - iOS стиль</title>
+    <link rel="stylesheet" href="/css/ios-common.css">
+</head>
+<body>
+    <div class="ios-container">
+        <!-- Статус бар как в iOS -->
+        <div class="status-bar">
+            <div class="time">20:25</div>
+            <div class="status-icons">
+                <span class="signal">📶</span>
+                <span class="wifi">📡</span>
+                <span class="battery">🔋 87%</span>
+            </div>
+        </div>
+
+        <!-- Навигация -->
+        <nav class="ios-nav">
+            <a href="/" class="nav-item active">🏠 Unit</a>
+            <a href="/crm/" class="nav-item">👥 CRM</a>
+            <a href="/api/" class="nav-item">🔌 API</a>
+            <a href="/admin/" class="nav-item">⚙️ Admin</a>
+        </nav>
+
+        <!-- Основной рабочий стол -->
+        <main class="unit-desktop">
+            <!-- Левая панель - Исполнители -->
+            <section class="panel performers-panel">
+                <div class="panel-header">
+                    <h2>👥 Исполнители</h2>
+                    <button class="btn-sm" onclick="showAddPerformerForm()">+ Добавить</button>
+                </div>
+                <div class="panel-content" id="performers-list">
+                    <div class="ios-card">
+                        <div class="card-header">
+                            <div class="card-title">Иван Петров</div>
+                            <div class="card-rating">⭐ 4.8</div>
+                        </div>
+                        <div class="card-meta">
+                            <span>ivan@mail.com</span>
+                            <span>•</span>
+                            <span>750₽/час</span>
+                        </div>
+                        <div class="skills">
+                            <span class="skill-tag">IT</span>
+                            <span class="skill-tag">Ремонт</span>
+                        </div>
+                        <div class="status available">✅ Доступен</div>
+                    </div>
+                    
+                    <div class="ios-card">
+                        <div class="card-header">
+                            <div class="card-title">Мария Сидорова</div>
+                            <div class="card-rating">⭐ 4.9</div>
+                        </div>
+                        <div class="card-meta">
+                            <span>maria@mail.com</span>
+                            <span>•</span>
+                            <span>1000₽/час</span>
+                        </div>
+                        <div class="skills">
+                            <span class="skill-tag">Клининг</span>
+                            <span class="skill-tag">Уборка</span>
+                        </div>
+                        <div class="status available">✅ Доступен</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Центральная панель - Услуги -->
+            <section class="panel services-panel">
+                <div class="panel-header">
+                    <h2>💼 Услуги</h2>
+                    <button class="btn-sm" onclick="showAddServiceForm()">+ Добавить</button>
+                </div>
+                <div class="panel-content" id="services-list">
+                    <div class="ios-card">
+                        <div class="card-header">
+                            <div class="card-title">Ремонт компьютеров</div>
+                            <div class="card-price">1500₽</div>
+                        </div>
+                        <div class="card-meta">
+                            <span>2 часа</span>
+                            <span>•</span>
+                            <span>IT</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-ios btn-primary">Назначить</button>
+                            <button class="btn-ios btn-secondary">Изменить</button>
+                        </div>
+                    </div>
+                    
+                    <div class="ios-card">
+                        <div class="card-header">
+                            <div class="card-title">Уборка офиса</div>
+                            <div class="card-price">3000₽</div>
+                        </div>
+                        <div class="card-meta">
+                            <span>3 часа</span>
+                            <span>•</span>
+                            <span>Клининг</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-ios btn-primary">Назначить</button>
+                            <button class="btn-ios btn-secondary">Изменить</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Правая панель - Связи и управление -->
+            <section class="panel management-panel">
+                <div class="panel-header">
+                    <h2>🎯 Назначения</h2>
+                    <div class="view-toggles">
+                        <button class="btn-sm active">Связи</button>
+                        <button class="btn-sm">Расписание</button>
+                    </div>
+                </div>
+                <div class="panel-content" id="management-area">
+                    <div class="ios-card">
+                        <div class="card-header">
+                            <div class="card-title">Активные связи</div>
+                        </div>
+                        <div class="connection-item">
+                            <span class="service">Ремонт компьютеров</span>
+                            <span class="connector">↔</span>
+                            <span class="performer">Иван Петров</span>
+                            <span class="status-badge active">активно</span>
+                        </div>
+                        <div class="drop-zone">
+                            Перетащите сюда услугу и исполнителя для связи
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Панель аналитики -->
+        <footer class="analytics-panel">
+            <div class="analytics-header">
+                <h3>📊 Аналитика и метрики</h3>
+            </div>
+            <div class="analytics-content">
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <span class="metric-value">75%</span>
+                        <span class="metric-label">Загрузка исполнителей</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">3</span>
+                        <span class="metric-label">Ожидают назначения</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">12</span>
+                        <span class="metric-label">Выполнено сегодня</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/js/ios-common.js"></script>
+    <script>
+        function showAddServiceForm() {
+            IOSCommon.showNotification('Форма добавления услуги');
+        }
+        
+        function showAddPerformerForm() {
+            IOSCommon.showNotification('Форма добавления исполнителя');
+        }
+        
+        // Обновление времени
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.getHours().toString().padStart(2, '0') + ':' + 
+                             now.getMinutes().toString().padStart(2, '0');
+            document.querySelector('.time').textContent = timeString;
+        }
+        setInterval(updateTime, 60000);
+        updateTime();
+    </script>
+</body>
+</html>

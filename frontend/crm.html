@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM - iOS стиль</title>
+    <link rel="stylesheet" href="/css/ios-common.css">
+</head>
+<body>
+    <div class="ios-container">
+        <div class="status-bar">
+            <div class="time">20:25</div>
+            <div class="status-icons">
+                <span class="signal">📶</span>
+                <span class="wifi">📡</span>
+                <span class="battery">🔋 87%</span>
+            </div>
+        </div>
+
+        <nav class="ios-nav">
+            <a href="/" class="nav-item">🏠 Unit</a>
+            <a href="/crm/" class="nav-item active">👥 CRM</a>
+            <a href="/api/" class="nav-item">🔌 API</a>
+            <a href="/admin/" class="nav-item">⚙️ Admin</a>
+        </nav>
+
+        <main class="ios-main">
+            <header class="ios-header">
+                <h1>👥 CRM System</h1>
+                <p>Управление клиентами и сделками</p>
+                <input type="text" placeholder="🔍 Поиск клиентов..." class="ios-search">
+            </header>
+
+            <div class="action-grid">
+                <button class="action-btn" onclick="IOSCommon.showNotification('Добавить клиента')">
+                    <span class="icon">➕</span>
+                    <span>Клиент</span>
+                </button>
+                <button class="action-btn" onclick="IOSCommon.showNotification('Новая сделка')">
+                    <span class="icon">💼</span>
+                    <span>Сделка</span>
+                </button>
+                <button class="action-btn" onclick="IOSCommon.showNotification('Отчеты')">
+                    <span class="icon">📊</span>
+                    <span>Отчеты</span>
+                </button>
+                <button class="action-btn" onclick="IOSCommon.showNotification('Импорт данных')">
+                    <span class="icon">📥</span>
+                    <span>Импорт</span>
+                </button>
+            </div>
+
+            <div class="ios-card">
+                <div class="card-header">
+                    <div class="card-title">Активные сделки</div>
+                    <span class="badge">3</span>
+                </div>
+                <ul class="ios-list">
+                    <li class="list-item">
+                        <div>
+                            <div class="title">ООО "ТехноПрофи"</div>
+                            <div class="subtitle">Разработка CRM • 250 000₽</div>
+                        </div>
+                        <span style="color: #34c759;">●</span>
+                    </li>
+                    <li class="list-item">
+                        <div>
+                            <div class="title">ИП Сидоров</div>
+                            <div class="subtitle">Техническая поддержка • 45 000₽</div>
+                        </div>
+                        <span style="color: #ff9500;">●</span>
+                    </li>
+                </ul>
+                <button class="btn-ios btn-secondary mt-20" onclick="IOSCommon.showNotification('Все сделки')">
+                    Все сделки
+                </button>
+            </div>
+
+            <div class="ios-card mt-20">
+                <div class="card-header">
+                    <div class="card-title">Последние клиенты</div>
+                </div>
+                <ul class="ios-list">
+                    <li class="list-item">
+                        <div>
+                            <div class="title">Анна Петрова</div>
+                            <div class="subtitle">anna@mail.com • +7 916 123-45-67</div>
+                        </div>
+                    </li>
+                    <li class="list-item">
+                        <div>
+                            <div class="title">Максим Иванов</div>
+                            <div class="subtitle">max@company.ru • Менеджер</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+    </div>
+
+    <script src="/js/ios-common.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - iOS стиль</title>
+    <link rel="stylesheet" href="/css/ios-common.css">
+</head>
+<body>
+    <div class="ios-container">
+        <div class="status-bar">
+            <div class="time">20:25</div>
+            <div class="status-icons">
+                <span class="signal">📶</span>
+                <span class="wifi">📡</span>
+                <span class="battery">🔋 87%</span>
+            </div>
+        </div>
+
+        <nav class="ios-nav">
+            <a href="/" class="nav-item">🏠 Unit</a>
+            <a href="/crm/" class="nav-item">👥 CRM</a>
+            <a href="/api/" class="nav-item">🔌 API</a>
+            <a href="/admin/" class="nav-item active">⚙️ Admin</a>
+        </nav>
+
+        <main class="ios-main">
+            <header class="ios-header">
+                <h1>⚙️ Admin Panel</h1>
+                <p>Управление системой и настройками</p>
+                <input type="text" placeholder="🔍 Поиск настроек..." class="ios-search">
+            </header>
+
+            <div class="action-grid">
+                <button class="action-btn" onclick="IOSCommon.showNotification('Пользователи')">
+                    <span class="icon">👤</span>
+                    <span>Пользователи</span>
+                </button>
+                <button class="action-btn" onclick="IOSCommon.showNotification('Настройки системы')">
+                    <span class="icon">⚙️</span>
+                    <span>Настройки</span>
+                </button>
+                <button class="action-btn" onclick="IOSCommon.showNotification('Логи системы')">
+                    <span class="icon">📋</span>
+                    <span>Логи</span>
+                </button>
+                <button class="action-btn" onclick="IOSCommon.showNotification('Резервные копии')">
+                    <span class="icon">💾</span>
+                    <span>Бэкапы</span>
+                </button>
+            </div>
+
+            <div class="ios-card">
+                <div class="card-header">
+                    <div class="card-title">Статистика системы</div>
+                </div>
+                <ul class="ios-list">
+                    <li class="list-item">
+                        <div class="title">Использование CPU</div>
+                        <div style="color: #34c759;">24%</div>
+                    </li>
+                    <li class="list-item">
+                        <div class="title">Память</div>
+                        <div style="color: #ff9500;">1.2GB / 4GB</div>
+                    </li>
+                    <li class="list-item">
+                        <div class="title">Дисковое пространство</div>
+                        <div style="color: #34c759;">45%</div>
+                    </li>
+                    <li class="list-item">
+                        <div class="title">Активные пользователи</div>
+                        <div style="color: #34c759;">3</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="ios-card mt-20">
+                <div class="card-header">
+                    <div class="card-title">Быстрые действия</div>
+                </div>
+                <button class="btn-ios btn-primary" onclick="IOSCommon.showNotification('Кэш очищен')">
+                    Очистить кэш
+                </button>
+                <button class="btn-ios btn-secondary" onclick="IOSCommon.showNotification('Логи экспортированы')">
+                    Экспорт логов
+                </button>
+                <button class="btn-ios btn-secondary" onclick="IOSCommon.showNotification('Резервная копия создана')">
+                    Создать бэкап
+                </button>
+            </div>
+
+            <div class="ios-card mt-20">
+                <div class="card-header">
+                    <div class="card-title">Последние события</div>
+                </div>
+                <ul class="ios-list">
+                    <li class="list-item">
+                        <div>
+                            <div class="title">Новый пользователь</div>
+                            <div class="subtitle">Анна Петрова • 10 минут назад</div>
+                        </div>
+                    </li>
+                    <li class="list-item">
+                        <div>
+                            <div class="title">Обновление системы</div>
+                            <div class="subtitle">Версия 1.2.3 • 2 часа назад</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+    </div>
+
+    <script src="/js/ios-common.js"></script>
+</body>
+</html>

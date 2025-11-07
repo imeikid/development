@@ -1,0 +1,476 @@
+/* ===== ОСНОВНЫЕ СТИЛИ iOS ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f2f2f7;
+    color: #000;
+    line-height: 1.4;
+}
+
+.ios-container {
+    max-width: 400px;
+    margin: 0 auto;
+    background: white;
+    min-height: 100vh;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+/* Статус бар */
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 16px;
+    background: #000;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.status-icons {
+    display: flex;
+    gap: 8px;
+}
+
+/* Навигация */
+.ios-nav {
+    display: flex;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e5e5ea;
+    padding: 8px 16px;
+}
+
+.nav-item {
+    flex: 1;
+    text-align: center;
+    padding: 12px 8px;
+    text-decoration: none;
+    color: #8e8e93;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 10px;
+    margin: 0 4px;
+    transition: all 0.2s ease;
+}
+
+.nav-item.active {
+    background: #007aff;
+    color: white;
+}
+
+.nav-item:hover {
+    background: #e5e5ea;
+}
+
+/* Основной контент */
+.ios-main {
+    padding: 16px;
+}
+
+.ios-header {
+    margin-bottom: 24px;
+}
+
+.ios-header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.ios-header p {
+    font-size: 17px;
+    color: #8e8e93;
+}
+
+.ios-search {
+    width: 100%;
+    padding: 12px 16px;
+    background: #f2f2f7;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-top: 16px;
+}
+
+.ios-search:focus {
+    outline: none;
+    background: #e5e5ea;
+}
+
+/* Карточки */
+.ios-card {
+    background: white;
+    margin: 8px 0;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border: 1px solid #e5e5ea;
+    position: relative;
+    overflow: hidden;
+}
+
+.ios-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #007aff;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+.card-title {
+    font-size: 17px;
+    font-weight: 600;
+    flex: 1;
+}
+
+.card-meta {
+    font-size: 15px;
+    color: #8e8e93;
+    margin-bottom: 8px;
+}
+
+/* Кнопки */
+.btn-ios {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+    margin: 4px 0;
+}
+
+.btn-primary {
+    background: #007aff;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #0056cc;
+}
+
+.btn-secondary {
+    background: #f2f2f7;
+    color: #007aff;
+    border: 1px solid #e5e5ea;
+}
+
+.btn-secondary:hover {
+    background: #e5e5ea;
+}
+
+/* Сетка действий */
+.action-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.action-btn {
+    background: white;
+    border: 1px solid #e5e5ea;
+    border-radius: 12px;
+    padding: 20px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.action-btn:hover {
+    background: #f8f9fa;
+    transform: scale(1.02);
+}
+
+.action-btn .icon {
+    font-size: 24px;
+}
+
+/* Списки */
+.ios-list {
+    list-style: none;
+}
+
+.list-item {
+    padding: 16px;
+    border-bottom: 1px solid #e5e5ea;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-item:last-child {
+    border-bottom: none;
+}
+
+.list-item .title {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.list-item .subtitle {
+    font-size: 15px;
+    color: #8e8e93;
+}
+
+/* Адаптивность */
+@media (max-width: 380px) {
+    .ios-container {
+        max-width: 100%;
+        box-shadow: none;
+    }
+    
+    .action-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Утилиты */
+.text-center { text-align: center; }
+.mt-20 { margin-top: 20px; }
+.mb-20 { margin-bottom: 20px; }
+.p-20 { padding: 20px; }
+.bg-white { background: white; }
+.rounded { border-radius: 12px; }
+.shadow { box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.ios-card {
+    animation: fadeIn 0.3s ease;
+}
+
+/* Стили для прежней структуры Unit-панели */
+.unit-desktop {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    padding: 16px;
+    flex: 1;
+}
+
+.panel {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border: 1px solid #e5e5ea;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.panel-header {
+    padding: 16px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e5e5ea;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.panel-header h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 8px;
+    background: #007aff;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.panel-content {
+    flex: 1;
+    padding: 8px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Стили для статусов */
+.status {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 4px 8px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.status.available {
+    background: rgba(52, 199, 89, 0.1);
+    color: #34c759;
+    border: 1px solid #34c759;
+}
+
+.status.busy {
+    background: rgba(255, 149, 0, 0.1);
+    color: #ff9500;
+    border: 1px solid #ff9500;
+}
+
+/* Стили для связей */
+.connection-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin: 4px 0;
+}
+
+.connector {
+    color: #8e8e93;
+}
+
+.status-badge {
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.status-badge.active {
+    background: rgba(52, 199, 89, 0.1);
+    color: #34c759;
+}
+
+.drop-zone {
+    border: 2px dashed #e5e5ea;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    color: #8e8e93;
+    margin-top: 8px;
+}
+
+/* Аналитическая панель */
+.analytics-panel {
+    background: #f8f9fa;
+    border-top: 1px solid #e5e5ea;
+}
+
+.analytics-header {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e5e5ea;
+}
+
+.analytics-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.analytics-content {
+    padding: 16px;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.metric-card {
+    background: white;
+    padding: 16px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #e5e5ea;
+}
+
+.metric-value {
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+    color: #007aff;
+    margin-bottom: 4px;
+}
+
+.metric-label {
+    font-size: 14px;
+    color: #8e8e93;
+}
+
+/* Переключатели видов */
+.view-toggles {
+    display: flex;
+    gap: 4px;
+}
+
+.view-toggles .btn-sm {
+    background: transparent;
+    color: #8e8e93;
+    border: 1px solid #e5e5ea;
+}
+
+.view-toggles .btn-sm.active {
+    background: #007aff;
+    color: white;
+    border-color: #007aff;
+}
+
+/* Адаптивность для desktop */
+@media (max-width: 1200px) {
+    .unit-desktop {
+        grid-template-columns: 1fr 1fr;
+    }
+    .management-panel {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .unit-desktop {
+        grid-template-columns: 1fr;
+    }
+    .management-panel {
+        grid-column: span 1;
+    }
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Дополнительные стили для badge */
+.badge {
+    background: #ff3b30;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 20px;
+    text-align: center;
+}

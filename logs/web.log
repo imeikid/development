@@ -1,2 +1,170 @@
 104.28.200.202 - - [04/Nov/2025 11:46:54] "GET / HTTP/1.1" 200 -
 104.28.200.202 - - [04/Nov/2025 11:46:57] "GET / HTTP/1.1" 200 -
+64.62.156.212 - - [04/Nov/2025 12:36:50] "GET / HTTP/1.1" 200 -
+64.62.156.219 - - [04/Nov/2025 12:37:04] code 404, message File not found
+64.62.156.219 - - [04/Nov/2025 12:37:04] "GET /favicon.ico HTTP/1.1" 404 -
+64.62.156.212 - - [04/Nov/2025 12:37:06] code 404, message File not found
+64.62.156.212 - - [04/Nov/2025 12:37:06] "GET http://api.ipify.org/?format=json HTTP/1.1" 404 -
+64.62.156.215 - - [04/Nov/2025 12:37:09] code 501, message Unsupported method ('CONNECT')
+64.62.156.215 - - [04/Nov/2025 12:37:09] "CONNECT www.shadowserver.org:443 HTTP/1.1" 501 -
+60.191.125.35 - - [04/Nov/2025 12:52:51] code 404, message File not found
+60.191.125.35 - - [04/Nov/2025 12:52:51] "HEAD http://112.124.42.80:63435/ HTTP/1.1" 404 -
+77.222.102.254 - - [04/Nov/2025 13:49:24] code 400, message Bad HTTP/0.9 request type ('\\x00\\x00\\x00')
+77.222.102.254 - - [04/Nov/2025 13:49:24] "\x00\x00\x00 c\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00" 400 -
+176.109.14.91 - - [04/Nov/2025 14:55:39] "GET / HTTP/1.1" 200 -
+176.109.14.91 - - [04/Nov/2025 14:57:31] "GET / HTTP/1.1" 200 -
+77.222.102.254 - - [04/Nov/2025 15:00:16] code 400, message Bad HTTP/0.9 request type ('\\x00\\x00\\x00')
+77.222.102.254 - - [04/Nov/2025 15:00:16] "\x00\x00\x00 c\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00" 400 -
+3.237.173.220 - - [04/Nov/2025 16:04:56] code 400, message Bad request version ('À\\x14À')
+3.237.173.220 - - [04/Nov/2025 16:04:56] "\x16\x03\x01\x00î\x01\x00\x00ê\x03\x03©¡;s\x0fdb¨ää°\x14\x07^ì\x91¯çb9\x8f\x1dÆ\x89-;\x01(Úæ\x16ü \x9b¶\x13\x05Z\x82©i\x02¸+\x80Q\x9aiã\x91\x11\x88ÁÔ.\x85jÝ9¯¹ê\x98\x9e\x83\x00&Ì¨Ì©À/À0À+À,À\x13À\x09À\x14À" 400 -
+20.121.138.113 - - [04/Nov/2025 17:56:45] code 400, message Bad request syntax ('MGLNDD_212.193.26.156_8000')
+20.121.138.113 - - [04/Nov/2025 17:56:45] "MGLNDD_212.193.26.156_8000" 400 -
+162.216.150.7 - - [04/Nov/2025 18:19:28] "GET / HTTP/1.0" 200 -
+162.216.150.7 - - [04/Nov/2025 18:19:29] "GET / HTTP/1.1" 200 -
+204.76.203.18 - - [04/Nov/2025 19:16:47] "GET / HTTP/1.1" 200 -
+204.76.203.18 - - [04/Nov/2025 19:27:27] code 404, message File not found
+204.76.203.18 - - [04/Nov/2025 19:27:27] "GET /bins/ HTTP/1.1" 404 -
+204.76.203.18 - - [04/Nov/2025 19:36:10] code 404, message File not found
+204.76.203.18 - - [04/Nov/2025 19:36:10] "GET /bin/ HTTP/1.1" 404 -
+204.76.203.18 - - [04/Nov/2025 19:50:15] code 404, message File not found
+204.76.203.18 - - [04/Nov/2025 19:50:15] "GET /backup/ HTTP/1.1" 404 -
+162.142.125.193 - - [04/Nov/2025 20:18:23] "GET / HTTP/1.1" 200 -
+162.142.125.193 - - [04/Nov/2025 20:18:30] code 400, message Bad request version ('À\\x14À')
+162.142.125.193 - - [04/Nov/2025 20:18:30] "\x16\x03\x01\x00î\x01\x00\x00ê\x03\x03û¹9\x8c\x0e\x9b1ýD~\x096!ôK\x7fò9Ñãbn${Ý\x91;\x7f4ü Ò \x1cé7B¶Ç\x1fo"\x09\x12O­1´ãðLüû=6È\x7fáþ:\x8c\x83ýáµ\x00&Ì¨Ì©À/À0À+À,À\x13À\x09À\x14À" 400 -
+162.142.125.193 - - [04/Nov/2025 20:18:31] "GET / HTTP/1.1" 200 -
+162.142.125.193 - - [04/Nov/2025 20:18:32] code 505, message Invalid HTTP version (2.0)
+162.142.125.193 - - [04/Nov/2025 20:18:32] "PRI * HTTP/2.0" 505 -
+162.142.125.193 - - [04/Nov/2025 20:18:33] code 404, message File not found
+162.142.125.193 - - [04/Nov/2025 20:18:33] "GET /favicon.ico HTTP/1.1" 404 -
+162.142.125.193 - - [04/Nov/2025 20:18:47] code 400, message Bad request version ('À\\x14À')
+162.142.125.193 - - [04/Nov/2025 20:18:47] "\x16\x03\x01\x00î\x01\x00\x00ê\x03\x03G0í\x94>@°\x16óÏ\x9f»^m\x92çk\x1f\x10<\x86ñ\x02úØ¬\x06hS\x07Sç ®7ÁþÈ'ß×i\x91öÐYGpÔQ5O§~\x14\x94n¬x\x00ÃÓ¬7È\x00&Ì¨Ì©À/À0À+À,À\x13À\x09À\x14À" 400 -
+162.142.125.193 - - [04/Nov/2025 20:18:49] code 404, message File not found
+162.142.125.193 - - [04/Nov/2025 20:18:49] "GET /sitemap.xml HTTP/1.1" 404 -
+----------------------------------------
+Exception occurred during processing of request from ('162.142.125.213', 34034)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 707, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+162.142.125.213 - - [04/Nov/2025 20:35:57] "GET / HTTP/1.1" 200 -
+162.142.125.213 - - [04/Nov/2025 20:36:01] code 400, message Bad request version ('À\\x14À')
+162.142.125.213 - - [04/Nov/2025 20:36:01] "\x16\x03\x01\x00î\x01\x00\x00ê\x03\x03äÞX¦RÉÂ<\x04iÆë\x8c]âcI\x07Ëí\x8fë"sLn\x07;¯ö\x86\x12 \x19§RÑëÁ8\\\x15ç¹FÚÎ\x82Í\x9b\x0fÝ\x14¤yA\x8cP¥\x92Ôª¹jn\x00&Ì¨Ì©À/À0À+À,À\x13À\x09À\x14À" 400 -
+162.142.125.213 - - [04/Nov/2025 20:36:01] "GET / HTTP/1.1" 200 -
+162.142.125.213 - - [04/Nov/2025 20:36:01] code 505, message Invalid HTTP version (2.0)
+162.142.125.213 - - [04/Nov/2025 20:36:01] "PRI * HTTP/2.0" 505 -
+162.142.125.213 - - [04/Nov/2025 20:36:01] code 404, message File not found
+162.142.125.213 - - [04/Nov/2025 20:36:01] "GET /favicon.ico HTTP/1.1" 404 -
+162.142.125.213 - - [04/Nov/2025 20:36:06] code 400, message Bad request version ('À\\x14À')
+162.142.125.213 - - [04/Nov/2025 20:36:06] "\x16\x03\x01\x00î\x01\x00\x00ê\x03\x03wió©8LW\x02A\x99~åíLQ\x93ÁÕq).Þ ¹\x95\x95cþi%DF ßé=\x83§âh%»Í\x83Ä\x17\x8c+¸a©KÛ\x98ÆaP\x89:i\x85SÍD`\x00&Ì¨Ì©À/À0À+À,À\x13À\x09À\x14À" 400 -
+162.142.125.213 - - [04/Nov/2025 20:36:06] code 404, message File not found
+162.142.125.213 - - [04/Nov/2025 20:36:06] "GET /sitemap.xml HTTP/1.1" 404 -
+8.221.136.170 - - [04/Nov/2025 23:30:42] "GET / HTTP/1.1" 200 -
+62.60.131.80 - - [05/Nov/2025 01:55:51] code 400, message Bad HTTP/0.9 request type ('JDWP-Handshake\\x00\\x00\\x00')
+62.60.131.80 - - [05/Nov/2025 01:55:51] "JDWP-Handshake\x00\x00\x00\x09\x00\x00\x00\x01\x00\x01\x01" 400 -
+172.202.117.171 - - [05/Nov/2025 01:57:09] code 400, message Bad request version ('À\\x14À')
+172.202.117.171 - - [05/Nov/2025 01:57:09] "\x16\x03\x01\x00{\x01\x00\x00w\x03\x03Ó/Ì*\x06õâ \x1e4\x9dâ\x08VæHd\x82ÇGÐrpDö÷Z\x8c\x9c\x05@Ê\x00\x00\x1aÀ/À+À\x11À\x07À\x13À\x09À\x14À" 400 -
+172.202.117.171 - - [05/Nov/2025 01:57:09] code 400, message Bad request syntax ('MGLNDD_212.193.26.156_8000')
+172.202.117.171 - - [05/Nov/2025 01:57:09] "MGLNDD_212.193.26.156_8000" 400 -
+198.235.24.49 - - [05/Nov/2025 06:20:35] "GET / HTTP/1.1" 200 -
+64.62.197.77 - - [05/Nov/2025 06:40:21] "GET / HTTP/1.1" 200 -
+64.62.197.86 - - [05/Nov/2025 06:40:36] code 404, message File not found
+64.62.197.86 - - [05/Nov/2025 06:40:36] "GET /favicon.ico HTTP/1.1" 404 -
+64.62.197.88 - - [05/Nov/2025 06:40:40] code 404, message File not found
+64.62.197.88 - - [05/Nov/2025 06:40:40] "GET http://api.ipify.org/?format=json HTTP/1.1" 404 -
+64.62.197.88 - - [05/Nov/2025 06:40:46] code 501, message Unsupported method ('CONNECT')
+64.62.197.88 - - [05/Nov/2025 06:40:46] "CONNECT www.shadowserver.org:443 HTTP/1.1" 501 -
+176.109.14.91 - - [05/Nov/2025 07:02:29] code 404, message File not found
+176.109.14.91 - - [05/Nov/2025 07:02:29] "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 -
+176.109.14.91 - - [05/Nov/2025 07:02:29] code 404, message File not found
+176.109.14.91 - - [05/Nov/2025 07:02:29] "GET /favicon.ico HTTP/1.1" 404 -
+176.109.14.91 - - [05/Nov/2025 07:02:29] code 404, message File not found
+176.109.14.91 - - [05/Nov/2025 07:02:29] "GET /apple-touch-icon.png HTTP/1.1" 404 -
+176.109.14.91 - - [05/Nov/2025 07:02:32] "GET / HTTP/1.1" 200 -
+176.109.14.91 - - [05/Nov/2025 07:02:32] "GET /css/main.css HTTP/1.1" 200 -
+176.109.14.91 - - [05/Nov/2025 07:02:32] "GET /js/main.js HTTP/1.1" 200 -
+176.109.14.91 - - [05/Nov/2025 07:02:35] "GET / HTTP/1.1" 200 -
+157.245.42.109 - - [05/Nov/2025 07:32:30] code 400, message Bad HTTP/0.9 request type ("\\x16\\x03\\x01\\x00{\\x01\\x00\\x00w\\x03\\x03ÀZg\\x8d}Fâf/u\\x8f\\x16\\x8ds'E\\x9a÷\\x84\\x16{\\x19§+Ú\\x0f~ØÑ\\x9fI:\\x00\\x00\\x1aÀ/À+À\\x11À\\x07À\\x13À")
+157.245.42.109 - - [05/Nov/2025 07:32:30] "\x16\x03\x01\x00{\x01\x00\x00w\x03\x03ÀZg\x8d}Fâf/u\x8f\x16\x8ds'E\x9a÷\x84\x16{\x19§+Ú\x0f~ØÑ\x9fI:\x00\x00\x1aÀ/À+À\x11À\x07À\x13À\x09À\x14À" 400 -
+157.245.42.109 - - [05/Nov/2025 07:32:30] code 400, message Bad request version ('À\\x14À')
+157.245.42.109 - - [05/Nov/2025 07:32:30] "\x16\x03\x01\x00{\x01\x00\x00w\x03\x03PÒ\x09Æ\x07\x1eþ\x89»6y\\èï\x09\x90ò\x02ÄÈú\\M\x8bhT¾q¦\x8c\x08­\x00\x00\x1aÀ/À+À\x11À\x07À\x13À\x09À\x14À" 400 -
+157.245.42.109 - - [05/Nov/2025 07:32:30] "GET / HTTP/1.1" 200 -
+157.245.42.109 - - [05/Nov/2025 07:32:30] code 404, message File not found
+157.245.42.109 - - [05/Nov/2025 07:32:30] "GET /login HTTP/1.1" 404 -
+176.109.14.91 - - [05/Nov/2025 08:10:53] code 404, message File not found
+176.109.14.91 - - [05/Nov/2025 08:10:53] "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 -
+176.109.14.91 - - [05/Nov/2025 08:10:53] code 404, message File not found
+176.109.14.91 - - [05/Nov/2025 08:10:53] "GET /apple-touch-icon.png HTTP/1.1" 404 -
+176.109.14.91 - - [05/Nov/2025 08:10:53] code 404, message File not found
+176.109.14.91 - - [05/Nov/2025 08:10:53] "GET /favicon.ico HTTP/1.1" 404 -
+185.247.137.212 - - [05/Nov/2025 08:40:47] "GET / HTTP/1.1" 200 -
+123.160.223.73 - - [05/Nov/2025 09:51:54] "GET / HTTP/1.1" 200 -
+123.160.223.73 - - [05/Nov/2025 09:51:56] "GET / HTTP/1.1" 200 -
+123.160.223.73 - - [05/Nov/2025 09:51:59] "GET /js/main.js HTTP/1.1" 200 -
+123.160.223.73 - - [05/Nov/2025 09:52:08] code 404, message File not found
+123.160.223.73 - - [05/Nov/2025 09:52:08] "GET /favicon.ico HTTP/1.1" 404 -
+176.65.149.194 - - [05/Nov/2025 09:59:13] code 400, message Bad request syntax ('JDWP-Handshake')
+176.65.149.194 - - [05/Nov/2025 09:59:13] "JDWP-Handshake" 400 -
+3.131.215.38 - - [05/Nov/2025 10:00:58] "GET / HTTP/1.1" 200 -
+3.131.215.38 - - [05/Nov/2025 10:00:59] "GET / HTTP/1.1" 200 -
+3.131.215.38 - - [05/Nov/2025 10:03:17] code 400, message Bad request version ('À\\x14À')
+3.131.215.38 - - [05/Nov/2025 10:03:17] "\x16\x03\x01\x00{\x01\x00\x00w\x03\x03¶Rº\x09²Û\x024\x09$wvöC]1\x87\x9c÷\x1bÿµ"þ\x18\x9fÜ¶RDºt\x00\x00\x1aÀ/À+À\x11À\x07À\x13À\x09À\x14À" 400 -
+3.131.215.38 - - [05/Nov/2025 10:05:42] code 400, message Bad request syntax ('SSH-2.0-Go')
+3.131.215.38 - - [05/Nov/2025 10:05:42] "SSH-2.0-Go" 400 -
+3.131.215.38 - - [05/Nov/2025 10:07:41] code 400, message Bad request version ('À\\x14À')
+3.131.215.38 - - [05/Nov/2025 10:07:41] "\x16\x03\x01\x00{\x01\x00\x00w\x03\x03$;ºwD\x16²¨\\Í´ÍæaÚV^J\x99\x83\x02f¥1F\x93B \x8d^-G\x00\x00\x1aÀ/À+À\x11À\x07À\x13À\x09À\x14À" 400 -
+204.76.203.230 - - [05/Nov/2025 11:16:36] code 501, message Unsupported method ('CONNECT')
+204.76.203.230 - - [05/Nov/2025 11:16:36] "CONNECT cfdump.packetsdatabase.com:443 HTTP/1.1" 501 -
+89.110.97.157 - - [05/Nov/2025 11:25:45] "GET / HTTP/1.1" 200 -
+138.68.92.186 - - [05/Nov/2025 12:53:54] code 404, message File not found
+138.68.92.186 - - [05/Nov/2025 12:53:54] "GET /squid-internal-mgr/cachemgr.cgi HTTP/1.1" 404 -
+146.190.241.68 - - [05/Nov/2025 12:57:42] code 404, message File not found
+146.190.241.68 - - [05/Nov/2025 12:57:42] "GET /squid-internal-mgr/cachemgr.cgi HTTP/1.1" 404 -
+77.222.102.117 - - [05/Nov/2025 14:29:29] code 400, message Bad HTTP/0.9 request type ('\\x00\\x00\\x00')
+77.222.102.117 - - [05/Nov/2025 14:29:29] "\x00\x00\x00 c\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00" 400 -
+200.9.154.79 - - [05/Nov/2025 16:08:55] code 501, message Unsupported method ('CONNECT')
+200.9.154.79 - - [05/Nov/2025 16:08:55] "CONNECT httpbin.org:443 HTTP/1.1" 501 -
+45.131.46.49 - - [05/Nov/2025 17:26:30] "GET / HTTP/1.1" 200 -
+176.65.149.194 - - [05/Nov/2025 17:27:09] code 400, message Bad request syntax ('JDWP-Handshake')
+176.65.149.194 - - [05/Nov/2025 17:27:09] "JDWP-Handshake" 400 -
+205.210.31.249 - - [06/Nov/2025 03:10:16] "GET / HTTP/1.1" 200 -
+184.105.139.67 - - [06/Nov/2025 03:30:12] "GET / HTTP/1.1" 200 -
+184.105.139.111 - - [06/Nov/2025 03:30:34] code 404, message File not found
+184.105.139.111 - - [06/Nov/2025 03:30:34] "GET /favicon.ico HTTP/1.1" 404 -
+184.105.139.103 - - [06/Nov/2025 03:30:38] code 404, message File not found
+184.105.139.103 - - [06/Nov/2025 03:30:38] "GET http://api.ipify.org/?format=json HTTP/1.1" 404 -
+184.105.139.79 - - [06/Nov/2025 03:30:41] code 501, message Unsupported method ('CONNECT')
+184.105.139.79 - - [06/Nov/2025 03:30:41] "CONNECT www.shadowserver.org:443 HTTP/1.1" 501 -
+109.237.26.206 - - [06/Nov/2025 03:57:34] "GET / HTTP/1.0" 200 -
+109.237.26.206 - - [06/Nov/2025 03:57:45] code 400, message Bad request version ("Cï'\\\\")
+109.237.26.206 - - [06/Nov/2025 03:57:45] "\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03\x12\x9b¾\x7f|Å\x1aÓ{\x03F\x08\x97PêÅ\x0bl\x19Q\x0b÷\x0bCï'\\" 400 -
+109.237.26.206 - - [06/Nov/2025 03:57:45] "GET / HTTP/1.0" 200 -
+109.237.26.206 - - [06/Nov/2025 03:57:45] "GET / HTTP/1.1" 200 -
+20.169.106.10 - - [06/Nov/2025 04:18:35] code 400, message Bad request syntax ('MGLNDD_212.193.26.156_8000')
+20.169.106.10 - - [06/Nov/2025 04:18:35] "MGLNDD_212.193.26.156_8000" 400 -
+209.38.136.74 - - [06/Nov/2025 04:37:08] code 404, message File not found
+209.38.136.74 - - [06/Nov/2025 04:37:08] "GET /squid-internal-mgr/cachemgr.cgi HTTP/1.1" 404 -
+20.14.73.198 - - [06/Nov/2025 08:04:21] code 400, message Bad HTTP/0.9 request type ('\\x16\\x03\\x01\\x00{\\x01\\x00\\x00w\\x03\\x03]¦V^ÿSá£B¶ª\\x142\\x83N/2ò\\x8cd\\x8d÷\\\\\\x18\\x11&n\\x90]JÈ·\\x00\\x00\\x1aÀ/À+À\\x11À\\x07À\\x13À')
+20.14.73.198 - - [06/Nov/2025 08:04:21] "\x16\x03\x01\x00{\x01\x00\x00w\x03\x03]¦V^ÿSá£B¶ª\x142\x83N/2ò\x8cd\x8d÷\\\x18\x11&n\x90]JÈ·\x00\x00\x1aÀ/À+À\x11À\x07À\x13À\x09À\x14À" 400 -
+20.14.73.198 - - [06/Nov/2025 08:04:21] code 400, message Bad request syntax ('MGLNDD_212.193.26.156_8000')
+20.14.73.198 - - [06/Nov/2025 08:04:21] "MGLNDD_212.193.26.156_8000" 400 -
+167.71.102.95 - - [06/Nov/2025 09:34:20] code 404, message File not found
+167.71.102.95 - - [06/Nov/2025 09:34:20] "GET /squid-internal-mgr/cachemgr.cgi HTTP/1.1" 404 -
+176.109.14.91 - - [06/Nov/2025 09:55:13] code 404, message File not found
+176.109.14.91 - - [06/Nov/2025 09:55:13] "GET /iphone.png HTTP/1.1" 404 -
