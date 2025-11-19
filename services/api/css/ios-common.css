@@ -1,0 +1,47 @@
+/* Common iOS-style CSS for all services */
+:root {
+    --ios-bg: #f2f2f7;
+    --ios-card-bg: #ffffff;
+    --ios-border: #c6c6c8;
+    --ios-primary: #007aff;
+    --ios-text: #000000;
+    --ios-green: #34c759;
+    --ios-red: #ff3b30;
+    --ios-orange: #ff9500;
+}
+
+[data-theme="dark"] {
+    --ios-bg: #000000;
+    --ios-card-bg: #1c1c1e;
+    --ios-border: #38383a;
+    --ios-text: #ffffff;
+}
+
+.ios-card {
+    background: var(--ios-card-bg);
+    border-radius: 16px;
+    padding: 20px;
+    border: 1px solid var(--ios-border);
+    margin: 10px 0;
+}
+
+.ios-button {
+    background: var(--ios-primary);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.ios-button:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+.ios-button:active {
+    transform: scale(0.95);
+}

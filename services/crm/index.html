@@ -4,64 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRM System - Управление клиентами</title>
-    <link rel="stylesheet" href="../../shared/css/common.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="/common.css">
 </head>
 <body>
+    <nav class="horizontal-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">👥</span>
+                <span class="logo-text">CRM System</span>
+            </div>
+            <div class="nav-links">
+                <a href="/" class="nav-link">
+                    <span class="nav-icon">🏠</span>
+                    <span class="nav-text">Главная</span>
+                </a>
+                <a href="/crm/" class="nav-link active">
+                    <span class="nav-icon">👥</span>
+                    <span class="nav-text">CRM</span>
+                </a>
+                <a href="/admin/" class="nav-link">
+                    <span class="nav-icon">⚙️</span>
+                    <span class="nav-text">Админ</span>
+                </a>
+                <a href="/web/" class="nav-link">
+                    <span class="nav-icon">🌍</span>
+                    <span class="nav-text">Веб</span>
+                </a>
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <span class="theme-icon">🌓</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
-        <header class="header">
-            <h1>🔄 CRM System</h1>
-            <nav class="nav">
-                <a href="#clients">Клиенты</a>
-                <a href="#deals">Сделки</a>
-                <a href="#analytics">Аналитика</a>
-            </nav>
+        <header style="text-align: center; margin-bottom: 40px;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 10px; background: linear-gradient(135deg, #007aff, #5856d6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                👥 CRM System
+            </h1>
+            <p style="font-size: 1.2rem; opacity: 0.8;">Управление клиентами и заявками</p>
         </header>
 
-        <main class="main-content">
-            <div class="quick-actions">
-                <button class="btn btn-primary" onclick="showAddClientModal()">+ Добавить клиента</button>
-                <button class="btn btn-secondary" onclick="loadClients()">Обновить список</button>
-                <div class="search-box">
-                    <input type="text" id="searchInput" placeholder="Поиск клиентов...">
-                </div>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">1,247</div>
+                <div class="stat-label">Всего клиентов</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">89</div>
+                <div class="stat-label">Новых сегодня</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">64%</div>
+                <div class="stat-label">Конверсия</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">₽256K</div>
+                <div class="stat-label">Оборот</div>
+            </div>
+        </div>
+
+        <div class="service-grid">
+            <div class="card">
+                <h2><span class="icon">📋</span> Управление клиентами</h2>
+                <p>Полный контроль над базой клиентов, история взаимодействий и сегментация</p>
             </div>
 
-            <div id="clientsGrid" class="clients-grid">
-                <!-- Клиенты будут загружены через JavaScript -->
+            <div class="card">
+                <h2><span class="icon">📞</span> Обращения и заявки</h2>
+                <p>Система обработки входящих заявок с автоматическим распределением</p>
             </div>
-
-            <div class="stats-container">
-                <div class="stat-card">
-                    <h3>Всего клиентов</h3>
-                    <span id="totalClients">0</span>
-                </div>
-                <div class="stat-card">
-                    <h3>Активные сделки</h3>
-                    <span id="activeDeals">0</span>
-                </div>
-            </div>
-        </main>
-    </div>
-
-    <div id="addClientModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeAddClientModal()">&times;</span>
-            <h2>Добавить нового клиента</h2>
-            <form id="clientForm">
-                <input type="text" name="name" placeholder="Имя клиента" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="tel" name="phone" placeholder="Телефон">
-                <select name="status">
-                    <option value="lead">Лид</option>
-                    <option value="client">Клиент</option>
-                    <option value="vip">VIP</option>
-                </select>
-                <button type="submit">Сохранить</button>
-            </form>
         </div>
     </div>
 
-    <script src="js/main.js"></script>
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            document.querySelector('.theme-icon').textContent = newTheme === 'dark' ? '🌞' : '🌓';
+        }
+
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.body.setAttribute('data-theme', savedTheme);
+        document.querySelector('.theme-icon').textContent = savedTheme === 'dark' ? '🌞' : '🌓';
+    </script>
 </body>
 </html>

@@ -3,19 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WEB Service</title>
-    <link rel="stylesheet" href="../../shared/css/common.css">
+    <title>Web Service - Веб сервис</title>
+    <link rel="stylesheet" href="/common.css">
 </head>
 <body>
+    <nav class="horizontal-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">🌍</span>
+                <span class="logo-text">Web Service</span>
+            </div>
+            <div class="nav-links">
+                <a href="/" class="nav-link">
+                    <span class="nav-icon">🏠</span>
+                    <span class="nav-text">Главная</span>
+                </a>
+                <a href="/crm/" class="nav-link">
+                    <span class="nav-icon">👥</span>
+                    <span class="nav-text">CRM</span>
+                </a>
+                <a href="/admin/" class="nav-link">
+                    <span class="nav-icon">⚙️</span>
+                    <span class="nav-text">Админ</span>
+                </a>
+                <a href="/web/" class="nav-link active">
+                    <span class="nav-icon">🌍</span>
+                    <span class="nav-text">Веб</span>
+                </a>
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <span class="theme-icon">🌓</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
-        <header class="header">
-            <h1>WEB Service</h1>
+        <header style="text-align: center; margin-bottom: 40px;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 10px; background: linear-gradient(135deg, #007aff, #5856d6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                🌍 Web Service
+            </h1>
+            <p style="font-size: 1.2rem; opacity: 0.8;">Основной веб-интерфейс платформы</p>
         </header>
-        <main>
-            <h2>Сервис находится в разработке</h2>
-            <p>Этот сервис будет доступен в ближайшее время.</p>
-            <a href="/crm">Перейти в CRM</a>
-        </main>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">15.2K</div>
+                <div class="stat-label">Посетителей</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">2.3K</div>
+                <div class="stat-label">Конверсий</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">18.7%</div>
+                <div class="stat-label">Конверсия</div>
+            </div>
+        </div>
+
+        <div class="service-grid">
+            <div class="card">
+                <h2><span class="icon">📱</span> Лендинг страницы</h2>
+                <p>Управление посадочными страницами, A/B тестирование и аналитика эффективности</p>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">📊</span> Аналитика трафика</h2>
+                <p>Детальная аналитика источников трафика, поведения пользователей и конверсий</p>
+            </div>
+        </div>
     </div>
+
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            document.querySelector('.theme-icon').textContent = newTheme === 'dark' ? '🌞' : '🌓';
+        }
+
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.body.setAttribute('data-theme', savedTheme);
+        document.querySelector('.theme-icon').textContent = savedTheme === 'dark' ? '🌞' : '🌓';
+    </script>
 </body>
 </html>

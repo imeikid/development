@@ -1,0 +1,192 @@
+<nav class="horizontal-nav">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <span class="logo-icon">🚀</span>
+            <span class="logo-text">Platform</span>
+        </div>
+        <div class="nav-links">
+            <a href="/" class="nav-link active">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-text">Главная</span>
+            </a>
+            <a href="/crm/" class="nav-link">
+                <span class="nav-icon">👥</span>
+                <span class="nav-text">CRM</span>
+            </a>
+            <a href="/admin/" class="nav-link">
+                <span class="nav-icon">⚙️</span>
+                <span class="nav-text">Админ</span>
+            </a>
+            <a href="/web/" class="nav-link">
+                <span class="nav-icon">🌍</span>
+                <span class="nav-text">Веб</span>
+            </a>
+            <a href="/api/" class="nav-link">
+                <span class="nav-icon">🔧</span>
+                <span class="nav-text">API</span>
+            </a>
+        </div>
+        <div class="nav-actions">
+            <button class="theme-toggle" onclick="toggleTheme()">
+                <span class="theme-icon">🌓</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<style>
+    .horizontal-nav {
+        background: var(--ios-card-bg);
+        border-bottom: 1px solid var(--ios-border);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+    }
+
+    .nav-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        font-size: 1.2rem;
+    }
+
+    .logo-icon {
+        font-size: 1.5rem;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 5px;
+        background: var(--ios-bg);
+        border-radius: 50px;
+        padding: 5px;
+        border: 1px solid var(--ios-border);
+    }
+
+    .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 20px;
+        border-radius: 50px;
+        text-decoration: none;
+        color: var(--ios-text);
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+        background: var(--ios-primary);
+        color: white;
+        transform: translateY(-1px);
+    }
+
+    .nav-icon {
+        font-size: 1.1rem;
+    }
+
+    .nav-text {
+        display: none;
+    }
+
+    .theme-toggle {
+        background: var(--ios-bg);
+        border: 1px solid var(--ios-border);
+        border-radius: 50%;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+        transform: rotate(15deg);
+        background: var(--ios-primary);
+        color: white;
+    }
+
+    @media (min-width: 768px) {
+        .nav-text {
+            display: inline;
+        }
+        
+        .nav-links {
+            gap: 10px;
+        }
+        
+        .nav-link {
+            padding: 12px 24px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .nav-container {
+            padding: 10px 15px;
+        }
+        
+        .nav-logo .logo-text {
+            display: none;
+        }
+        
+        .nav-link {
+            padding: 10px 15px;
+        }
+    }
+</style>
+
+<script>
+    function toggleTheme() {
+        const currentTheme = document.body.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.body.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        
+        // Update all theme toggles on the page
+        document.querySelectorAll('.theme-toggle .theme-icon').forEach(icon => {
+            icon.textContent = newTheme === 'dark' ? '🌞' : '🌓';
+        });
+    }
+
+    // Highlight current page in navigation
+    document.addEventListener('DOMContentLoaded', function() {
+        const currentPath = window.location.pathname;
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (currentPath === href || (currentPath === '/' && href === '/')) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.body.setAttribute('data-theme', savedTheme);
+        document.querySelectorAll('.theme-toggle .theme-icon').forEach(icon => {
+            icon.textContent = savedTheme === 'dark' ? '🌞' : '🌓';
+        });
+    });
+</script>

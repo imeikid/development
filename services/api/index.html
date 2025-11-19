@@ -3,19 +3,639 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API Service</title>
-    <link rel="stylesheet" href="../../shared/css/common.css">
+    <title>API Gateway - Центр управления</title>
+    <style>
+        :root {
+            --ios-bg: #f2f2f7;
+            --ios-card-bg: #ffffff;
+            --ios-border: #c6c6c8;
+            --ios-primary: #007aff;
+            --ios-text: #000000;
+            --ios-green: #34c759;
+            --ios-red: #ff3b30;
+            --ios-orange: #ff9500;
+            --ios-purple: #af52de;
+            --ios-teal: #5ac8fa;
+        }
+
+        [data-theme="dark"] {
+            --ios-bg: #000000;
+            --ios-card-bg: #1c1c1e;
+            --ios-border: #38383a;
+            --ios-text: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--ios-bg);
+            color: var(--ios-text);
+            line-height: 1.6;
+            padding-top: 70px;
+            min-height: 100vh;
+            transition: background-color 0.3s, color 0.3s;
+            overflow-x: auto;
+        }
+
+        .horizontal-scroll-container {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            overflow-x: auto;
+            min-height: calc(100vh - 70px);
+            align-items: flex-start;
+        }
+
+        .scroll-section {
+            flex: 0 0 auto;
+            width: 90vw;
+            max-width: 400px;
+            min-height: 500px;
+        }
+
+        .main-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #007aff, #5856d6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+
+        .card {
+            background: var(--ios-card-bg);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--ios-border);
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .card h2 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+        }
+
+        .card h2 .icon {
+            font-size: 1.6rem;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--ios-primary), #5856d6);
+            color: white;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-left: auto;
+        }
+
+        .status-healthy {
+            background-color: var(--ios-green);
+            color: white;
+        }
+
+        .status-error {
+            background-color: var(--ios-red);
+            color: white;
+        }
+
+        .endpoint-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .endpoint-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--ios-border);
+            transition: background-color 0.2s;
+        }
+
+        .endpoint-item:hover {
+            background-color: var(--ios-bg);
+            margin: 0 -15px;
+            padding: 15px;
+            border-radius: 12px;
+        }
+
+        .endpoint-item:last-child {
+            border-bottom: none;
+        }
+
+        .endpoint-info {
+            flex: 1;
+        }
+
+        .endpoint-name {
+            font-weight: 600;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+
+        .endpoint-path {
+            font-family: 'SF Mono', 'Courier New', monospace;
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        .test-btn {
+            background: var(--ios-primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.2s;
+            min-width: 80px;
+        }
+
+        .test-btn:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+        }
+
+        .test-btn:active {
+            transform: scale(0.95);
+        }
+
+        .results {
+            margin-top: 20px;
+        }
+
+        .result-container {
+            background: var(--ios-bg);
+            border: 1px solid var(--ios-border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 15px;
+            max-height: 300px;
+            overflow-y: auto;
+            display: none;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-family: 'SF Mono', 'Courier New', monospace;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 15px;
+            background: var(--ios-bg);
+            border-radius: 12px;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        .service-card {
+            background: var(--ios-card-bg);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid var(--ios-border);
+            transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .service-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .service-desc {
+            opacity: 0.7;
+            font-size: 0.8rem;
+        }
+
+        /* Custom scrollbar for horizontal container */
+        .horizontal-scroll-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .horizontal-scroll-container::-webkit-scrollbar-track {
+            background: var(--ios-bg);
+            border-radius: 4px;
+        }
+
+        .horizontal-scroll-container::-webkit-scrollbar-thumb {
+            background: var(--ios-primary);
+            border-radius: 4px;
+        }
+
+        .horizontal-scroll-container::-webkit-scrollbar-thumb:hover {
+            background: var(--ios-purple);
+        }
+
+        /* Loading animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .horizontal-scroll-container {
+                padding: 15px;
+                gap: 15px;
+            }
+            
+            .scroll-section {
+                width: 85vw;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .horizontal-scroll-container {
+                padding: 10px;
+                gap: 10px;
+            }
+            
+            .scroll-section {
+                width: 80vw;
+            }
+            
+            body {
+                padding-top: 60px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <h1>API Service</h1>
-        </header>
-        <main>
-            <h2>Сервис находится в разработке</h2>
-            <p>Этот сервис будет доступен в ближайшее время.</p>
-            <a href="/crm">Перейти в CRM</a>
-        </main>
+    <!-- Include shared navigation -->
+    <script>
+        // Load shared navigation
+        fetch('/shared-nav.html')
+            .then(response => response.text())
+            .then(html => {
+                document.body.insertAdjacentHTML('afterbegin', html);
+            })
+            .catch(error => {
+                console.log('Could not load navigation:', error);
+                // Fallback navigation
+                document.body.insertAdjacentHTML('afterbegin', `
+                    <nav style="background: var(--ios-card-bg); padding: 15px; text-align: center; border-bottom: 1px solid var(--ios-border); position: fixed; top: 0; left: 0; right: 0; z-index: 1000;">
+                        <a href="/" style="margin: 0 10px; color: var(--ios-primary); text-decoration: none;">Главная</a>
+                        <a href="/crm/" style="margin: 0 10px; color: var(--ios-primary); text-decoration: none;">CRM</a>
+                        <a href="/admin/" style="margin: 0 10px; color: var(--ios-primary); text-decoration: none;">Админ</a>
+                        <a href="/web/" style="margin: 0 10px; color: var(--ios-primary); text-decoration: none;">Веб</a>
+                        <a href="/api/" style="margin: 0 10px; color: var(--ios-primary); text-decoration: none;">API</a>
+                    </nav>
+                `);
+            });
+    </script>
+
+    <div class="main-header">
+        <h1>🚀 API Gateway</h1>
+        <p class="subtitle">Центр управления каналами продвижения</p>
     </div>
+
+    <div class="horizontal-scroll-container">
+        <!-- Section 1: System Status -->
+        <div class="scroll-section">
+            <div class="card">
+                <h2>
+                    <span class="icon">💚</span>
+                    Статус системы
+                    <span id="health-status" class="status-badge status-healthy">Online</span>
+                </h2>
+                <p>Мониторинг состояния всех сервисов API Gateway</p>
+                <div class="results">
+                    <button class="test-btn" onclick="testHealth()" id="health-btn">
+                        <span id="health-btn-text">Проверить</span>
+                    </button>
+                    <div id="health-result" class="result-container">
+                        <pre></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">📊</span> Статистика</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number" id="channels-count">6</div>
+                        <div class="stat-label">Каналов</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="landings-count">3</div>
+                        <div class="stat-label">Лендингов</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="conversions-count">2.3K</div>
+                        <div class="stat-label">Конверсий</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="revenue-count">125K</div>
+                        <div class="stat-label">Доход</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Channels -->
+        <div class="scroll-section">
+            <div class="card">
+                <h2><span class="icon">📈</span> Каналы продвижения</h2>
+                <p>Управление маркетинговыми каналами и аналитика</p>
+                <div class="results">
+                    <button class="test-btn" onclick="testChannels()" id="channels-btn">
+                        <span id="channels-btn-text">Загрузить</span>
+                    </button>
+                    <div id="channels-result" class="result-container">
+                        <pre></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">🌐</span> Лендинги</h2>
+                <p>Управление посадочными страницами и трафиком</p>
+                <div class="results">
+                    <button class="test-btn" onclick="testLandings()" id="landings-btn">
+                        <span id="landings-btn-text">Загрузить</span>
+                    </button>
+                    <div id="landings-result" class="result-container">
+                        <pre></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Quick Access -->
+        <div class="scroll-section">
+            <div class="card">
+                <h2><span class="icon">⚡</span> Быстрый доступ</h2>
+                <p>Популярные endpoints для разработки</p>
+                <ul class="endpoint-list">
+                    <li class="endpoint-item">
+                        <div class="endpoint-info">
+                            <div class="endpoint-name">Статус системы</div>
+                            <div class="endpoint-path">GET /api/health</div>
+                        </div>
+                        <button class="test-btn" onclick="testEndpoint('/api/health')">Тест</button>
+                    </li>
+                    <li class="endpoint-item">
+                        <div class="endpoint-info">
+                            <div class="endpoint-name">Каналы продвижения</div>
+                            <div class="endpoint-path">GET /api/channels</div>
+                        </div>
+                        <button class="test-btn" onclick="testEndpoint('/api/channels')">Тест</button>
+                    </li>
+                    <li class="endpoint-item">
+                        <div class="endpoint-info">
+                            <div class="endpoint-name">Лендинги</div>
+                            <div class="endpoint-path">GET /api/landings</div>
+                        </div>
+                        <button class="test-btn" onclick="testEndpoint('/api/landings')">Тест</button>
+                    </li>
+                    <li class="endpoint-item">
+                        <div class="endpoint-info">
+                            <div class="endpoint-name">Статистика</div>
+                            <div class="endpoint-path">GET /api/stats</div>
+                        </div>
+                        <button class="test-btn" onclick="testEndpoint('/api/stats')">Тест</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 4: Services -->
+        <div class="scroll-section">
+            <div class="card">
+                <h2><span class="icon">🔗</span> Сервисы платформы</h2>
+                <p>Доступ ко всем компонентам системы</p>
+                
+                <a href="/crm/" class="service-card">
+                    <span class="service-icon">👥</span>
+                    <div class="service-name">CRM система</div>
+                    <div class="service-desc">Управление клиентами и заявками</div>
+                </a>
+                
+                <a href="/admin/" class="service-card">
+                    <span class="service-icon">⚙️</span>
+                    <div class="service-name">Админ панель</div>
+                    <div class="service-desc">Управление настройками системы</div>
+                </a>
+                
+                <a href="/web/" class="service-card">
+                    <span class="service-icon">🌍</span>
+                    <div class="service-name">Веб сервис</div>
+                    <div class="service-desc">Основной веб-интерфейс</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // API testing functions
+        async function testHealth() {
+            await testEndpoint('/api/health', 'health-result', 'health-btn', 'health-btn-text');
+        }
+
+        async function testChannels() {
+            await testEndpoint('/api/channels', 'channels-result', 'channels-btn', 'channels-btn-text');
+        }
+
+        async function testLandings() {
+            await testEndpoint('/api/landings', 'landings-result', 'landings-btn', 'landings-btn-text');
+        }
+
+        async function testEndpoint(endpoint, resultId, btnId = null, btnTextId = null) {
+            const resultElement = document.getElementById(resultId);
+            const preElement = resultElement.querySelector('pre');
+            
+            let buttonElement = null;
+            let buttonTextElement = null;
+            
+            if (btnId && btnTextId) {
+                buttonElement = document.getElementById(btnId);
+                buttonTextElement = document.getElementById(btnTextId);
+                buttonElement.disabled = true;
+                buttonTextElement.innerHTML = '<div class="loading"></div>';
+            }
+            
+            try {
+                preElement.textContent = 'Загрузка данных...';
+                resultElement.style.display = 'block';
+                
+                const response = await fetch(endpoint);
+                const data = await response.json();
+                
+                preElement.textContent = JSON.stringify(data, null, 2);
+                
+                // Update health status if testing health endpoint
+                if (endpoint === '/api/health') {
+                    const healthStatus = document.getElementById('health-status');
+                    if (data.status === 'healthy') {
+                        healthStatus.className = 'status-badge status-healthy';
+                        healthStatus.textContent = 'Online';
+                    } else {
+                        healthStatus.className = 'status-badge status-error';
+                        healthStatus.textContent = 'Error';
+                    }
+                }
+                
+                // Update stats if testing channels or stats
+                if (endpoint === '/api/channels' && data.success) {
+                    document.getElementById('channels-count').textContent = data.data.length;
+                }
+                
+                if (endpoint === '/api/stats' && data.success) {
+                    document.getElementById('conversions-count').textContent = 
+                        (data.data.totalConversions / 1000).toFixed(1) + 'K';
+                    document.getElementById('revenue-count').textContent = 
+                        (data.data.revenue / 1000).toFixed(0) + 'K';
+                    document.getElementById('landings-count').textContent = data.data.activeLandings;
+                }
+                
+            } catch (error) {
+                preElement.textContent = `Ошибка подключения: ${error.message}\n\nПроверьте:\n- Запущен ли API сервер\n- Настройки CORS\n- Сетевые подключения`;
+            } finally {
+                if (buttonElement && buttonTextElement) {
+                    buttonElement.disabled = false;
+                    if (endpoint === '/api/health') {
+                        buttonTextElement.textContent = 'Обновить';
+                    } else {
+                        buttonTextElement.textContent = 'Загрузить';
+                    }
+                }
+            }
+        }
+
+        // Auto-load data on page load
+        window.addEventListener('load', async () => {
+            // Test health first
+            await testHealth();
+            
+            // Load channels count
+            try {
+                const response = await fetch('/api/channels');
+                const data = await response.json();
+                if (data.success) {
+                    document.getElementById('channels-count').textContent = data.data.length;
+                }
+            } catch (error) {
+                console.log('Could not load channels count');
+            }
+            
+            // Load stats
+            try {
+                const response = await fetch('/api/stats');
+                const data = await response.json();
+                if (data.success) {
+                    document.getElementById('conversions-count').textContent = 
+                        (data.data.totalConversions / 1000).toFixed(1) + 'K';
+                    document.getElementById('revenue-count').textContent = 
+                        (data.data.revenue / 1000).toFixed(0) + 'K';
+                    document.getElementById('landings-count').textContent = data.data.activeLandings;
+                }
+            } catch (error) {
+                console.log('Could not load stats');
+            }
+        });
+
+        // Add entrance animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateX(50px)';
+                card.style.transition = `all 0.6s ease ${index * 0.1}s`;
+                
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateX(0)';
+                }, 100);
+            });
+        });
+    </script>
 </body>
 </html>

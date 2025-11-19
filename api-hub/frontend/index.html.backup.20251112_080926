@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Hub - Центр управления каналами</title>
+    <link rel="stylesheet" href="styles/ios.css">
+    <style>
+        :root {
+            --ios-bg: #f2f2f7;
+            --ios-card-bg: #ffffff;
+            --ios-border: #c6c6c8;
+            --ios-primary: #007aff;
+            --ios-text: #000000;
+            --ios-text-secondary: #8e8e93;
+        }
+
+        [data-theme="dark"] {
+            --ios-bg: #000000;
+            --ios-card-bg: #1c1c1e;
+            --ios-border: #38383a;
+            --ios-primary: #0a84ff;
+            --ios-text: #ffffff;
+            --ios-text-secondary: #98989d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--ios-bg);
+            color: var(--ios-text);
+            line-height: 1.4;
+            overflow-x: hidden;
+        }
+
+        .ios-app {
+            max-width: 400px;
+            margin: 0 auto;
+            background: var(--ios-bg);
+            min-height: 100vh;
+        }
+
+        /* Navigation Bar */
+        .ios-navbar {
+            background: rgba(248, 248, 248, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--ios-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        [data-theme="dark"] .ios-navbar {
+            background: rgba(28, 28, 30, 0.8);
+        }
+
+        .ios-navbar-content {
+            padding: 12px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ios-title {
+            font-size: 17px;
+            font-weight: 600;
+        }
+
+        .ios-controls {
+            display: flex;
+            gap: 8px;
+        }
+
+        /* iOS Segment Control */
+        .ios-segment {
+            display: flex;
+            background: var(--ios-border);
+            border-radius: 8px;
+            padding: 3px;
+            margin: 16px;
+        }
+
+        .ios-segment-button {
+            flex: 1;
+            padding: 8px 12px;
+            text-align: center;
+            border-radius: 6px;
+            border: none;
+            background: transparent;
+            color: var(--ios-text);
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .ios-segment-button.active {
+            background: var(--ios-card-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* iOS Cards */
+        .ios-card {
+            background: var(--ios-card-bg);
+            border-radius: 14px;
+            margin: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .ios-card-header {
+            padding: 16px;
+            border-bottom: 1px solid var(--ios-border);
+        }
+
+        .ios-card-header h3 {
+            font-size: 17px;
+            font-weight: 600;
+        }
+
+        .ios-card-content {
+            padding: 16px;
+        }
+
+        /* iOS Form Elements */
+        .ios-textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 12px;
+            border: none;
+            background: var(--ios-bg);
+            border-radius: 10px;
+            color: var(--ios-text);
+            font-size: 16px;
+            resize: none;
+            font-family: inherit;
+        }
+
+        .ios-textarea:focus {
+            outline: none;
+        }
+
+        .channel-selector {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .ios-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 0;
+            cursor: pointer;
+        }
+
+        .ios-checkbox input {
+            display: none;
+        }
+
+        .ios-checkbox span {
+            position: relative;
+            padding-left: 32px;
+            font-size: 16px;
+        }
+
+        .ios-checkbox span:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 22px;
+            height: 22px;
+            border: 2px solid var(--ios-border);
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .ios-checkbox input:checked + span:before {
+            background: var(--ios-primary);
+            border-color: var(--ios-primary);
+        }
+
+        .ios-checkbox input:checked + span:after {
+            content: '✓';
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* iOS Buttons */
+        .ios-button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .ios-button.primary {
+            background: var(--ios-primary);
+            color: white;
+        }
+
+        .ios-button:active {
+            transform: scale(0.98);
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Data List */
+        .data-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .data-item {
+            padding: 12px;
+            background: var(--ios-bg);
+            border-radius: 10px;
+            border: 1px solid var(--ios-border);
+        }
+
+        .data-source {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .data-timestamp {
+            font-size: 12px;
+            color: var(--ios-text-secondary);
+        }
+
+        /* Status Indicators */
+        .status-success {
+            color: #34c759;
+        }
+
+        .status-error {
+            color: #ff3b30;
+        }
+
+        .status-pending {
+            color: #ffcc00;
+        }
+
+        /* Loading */
+        .ios-loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid var(--ios-primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive */
+        @media (max-width: 380px) {
+            .ios-app {
+                max-width: 100%;
+            }
+            
+            .ios-segment {
+                margin: 12px;
+            }
+            
+            .ios-card {
+                margin: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ios-app" data-theme="light">
+        <!-- iOS Navigation Bar -->
+        <header class="ios-navbar">
+            <div class="ios-navbar-content">
+                <h1 class="ios-title">API Hub</h1>
+                <div class="ios-controls">
+                    <button class="ios-button" onclick="toggleDarkMode()">🌙</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Segment Control -->
+        <div class="ios-segment" id="mainSegment">
+            <button class="ios-segment-button active" data-tab="distribution">📤 Распределение</button>
+            <button class="ios-segment-button" data-tab="incoming">📥 Входящие</button>
+            <button class="ios-segment-button" data-tab="channels">🌐 Каналы</button>
+            <button class="ios-segment-button" data-tab="analytics">📊 Аналитика</button>
+        </div>
+
+        <!-- Main Content -->
+        <main class="ios-content">
+            <!-- Distribution Tab -->
+            <div id="distribution" class="tab-content active">
+                <div class="ios-card">
+                    <div class="ios-card-header">
+                        <h3>📤 Отправка сообщений</h3>
+                    </div>
+                    <div class="ios-card-content">
+                        <textarea id="messageInput" class="ios-textarea" 
+                                  placeholder="Введите сообщение для отправки..."></textarea>
+                    </div>
+                </div>
+
+                <div class="ios-card">
+                    <div class="ios-card-header">
+                        <h3>🌐 Выбор каналов</h3>
+                    </div>
+                    <div class="ios-card-content">
+                        <div class="channel-selector" id="channelSelector">
+                            <!-- Channels will be loaded dynamically -->
+                        </div>
+                    </div>
+                </div>
+
+                <button class="ios-button primary" onclick="distributeMessage()" 
+                        style="width: calc(100% - 32px); margin: 0 16px 16px;">
+                    📢 Отправить во все каналы
+                </button>
+
+                <div class="ios-card" id="resultsCard" style="display: none;">
+                    <div class="ios-card-header">
+                        <h3>📋 Результаты отправки</h3>
+                    </div>
+                    <div class="ios-card-content">
+                        <div id="distributionResults"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Incoming Data Tab -->
+            <div id="incoming" class="tab-content">
+                <div class="ios-card">
+                    <div class="ios-card-header">
+                        <h3>📥 Входящие данные</h3>
+                        <button class="ios-button" onclick="loadIncomingData()">🔄 Обновить</button>
+                    </div>
+                    <div class="ios-card-content">
+                        <div id="incomingDataList" class="data-list">
+                            <div class="data-item">
+                                <div class="ios-loading"></div> Загрузка данных...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Channels Tab -->
+            <div id="channels" class="tab-content">
+                <div class="ios-card">
+                    <div class="ios-card-header">
+                        <h3>🌐 Управление каналами</h3>
+                    </div>
+                    <div class="ios-card-content">
+                        <div id="channelsList">
+                            <!-- Channels management will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analytics Tab -->
+            <div id="analytics" class="tab-content">
+                <div class="ios-card">
+                    <div class="ios-card-header">
+                        <h3>📊 Статистика системы</h3>
+                    </div>
+                    <div class="ios-card-content">
+                        <div id="analyticsContent">
+                            <!-- Analytics will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="utils/api.js"></script>
+    <script>
+        // API Configuration
+        const API_BASE_URL = window.location.hostname === 'localhost' ? 
+            'http://localhost:3002' : '/api-hub';
+
+        // Initialize application
+        document.addEventListener('DOMContentLoaded', function() {
+            initSegmentControl();
+            loadChannels();
+            loadIncomingData();
+            loadAnalytics();
+        });
+
+        // Segment Control
+        function initSegmentControl() {
+            const segmentButtons = document.querySelectorAll('.ios-segment-button');
+            segmentButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const tabName = this.getAttribute('data-tab');
+                    
+                    // Update active buttons
+                    segmentButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show corresponding tab
+                    document.querySelectorAll('.tab-content').forEach(tab => {
+                        tab.classList.remove('active');
+                    });
+                    document.getElementById(tabName).classList.add('active');
+                    
+                    // Load tab-specific data
+                    if (tabName === 'incoming') loadIncomingData();
+                    if (tabName === 'analytics') loadAnalytics();
+                });
+            });
+        }
+
+        // Dark Mode Toggle
+        function toggleDarkMode() {
+            const app = document.querySelector('.ios-app');
+            const currentTheme = app.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            app.setAttribute('data-theme', newTheme);
+            
+            const button = document.querySelector('.ios-controls .ios-button');
+            button.textContent = newTheme === 'light' ? '🌙' : '☀️';
+        }
+
+        // Load Channels for Distribution
+        async function loadChannels() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/channels`);
+                const data = await response.json();
+                
+                const channelSelector = document.getElementById('channelSelector');
+                const channelsList = document.getElementById('channelsList');
+                
+                channelSelector.innerHTML = '';
+                channelsList.innerHTML = '';
+                
+                Object.entries(data.channels).forEach(([key, channel]) => {
+                    // Channel selector for distribution
+                    const checkbox = document.createElement('label');
+                    checkbox.className = 'ios-checkbox';
+                    checkbox.innerHTML = `
+                        <input type="checkbox" value="${key}" ${channel.enabled ? 'checked' : ''}>
+                        <span>${channel.icon} ${channel.name}</span>
+                    `;
+                    channelSelector.appendChild(checkbox);
+                    
+                    // Channel management
+                    const channelItem = document.createElement('div');
+                    channelItem.className = 'channel-item';
+                    channelItem.style.cssText = 'padding: 12px; border-bottom: 1px solid var(--ios-border);';
+                    channelItem.innerHTML = `
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <strong>${channel.icon} ${channel.name}</strong>
+                                <div style="font-size: 12px; color: var(--ios-text-secondary);">
+                                    ${channel.enabled ? '🟢 Активен' : '🔴 Выключен'}
+                                </div>
+                            </div>
+                            <button class="ios-button" onclick="toggleChannel('${key}')">
+                                ${channel.enabled ? 'Выключить' : 'Включить'}
+                            </button>
+                        </div>
+                    `;
+                    channelsList.appendChild(channelItem);
+                });
+                
+            } catch (error) {
+                console.error('Error loading channels:', error);
+                showAlert('Ошибка загрузки каналов');
+            }
+        }
+
+        // Distribute Message
+        async function distributeMessage() {
+            const message = document.getElementById('messageInput').value.trim();
+            const selectedChannels = Array.from(
+                document.querySelectorAll('#channelSelector input:checked')
+            ).map(input => input.value);
+            
+            if (!message) {
+                showAlert('Введите сообщение для отправки');
+                return;
+            }
+            
+            if (selectedChannels.length === 0) {
+                showAlert('Выберите хотя бы один канал');
+                return;
+            }
+            
+            const button = document.querySelector('#distribution .ios-button.primary');
+            const originalText = button.textContent;
+            button.innerHTML = '<div class="ios-loading"></div> Отправка...';
+            button.disabled = true;
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/distribute`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        message,
+                        channels: selectedChannels,
+                        settings: {}
+                    })
+                });
+                
+                const result = await response.json();
+                
+                // Show results
+                document.getElementById('resultsCard').style.display = 'block';
+                const resultsDiv = document.getElementById('distributionResults');
+                
+                resultsDiv.innerHTML = result.results.map(r => `
+                    <div class="data-item">
+                        <div style="display: flex; justify-content: space-between;">
+                            <span><strong>${getChannelName(r.channel)}</strong></span>
+                            <span class="status-${r.status}">
+                                ${r.status === 'success' ? '✅' : '❌'}
+                            </span>
+                        </div>
+                        <div style="font-size: 12px; color: var(--ios-text-secondary);">
+                            ${r.result?.message || r.error || 'Отправлено'}
+                        </div>
+                    </div>
+                `).join('');
+                
+                showAlert(`Сообщение отправлено в ${result.results.filter(r => r.status === 'success').length} каналов`);
+                
+            } catch (error) {
+                console.error('Distribution error:', error);
+                showAlert('Ошибка при отправке сообщения');
+            } finally {
+                button.textContent = originalText;
+                button.disabled = false;
+            }
+        }
+
+        // Load Incoming Data
+        async function loadIncomingData() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/data?limit=20`);
+                const data = await response.json();
+                
+                const dataList = document.getElementById('incomingDataList');
+                
+                if (data.data.length === 0) {
+                    dataList.innerHTML = '<div class="data-item">Нет данных</div>';
+                    return;
+                }
+                
+                dataList.innerHTML = data.data.map(item => `
+                    <div class="data-item">
+                        <div class="data-source">${item.source} • ${item.type}</div>
+                        <div style="font-size: 14px; margin: 4px 0;">
+                            ${JSON.stringify(item.data).substring(0, 100)}...
+                        </div>
+                        <div class="data-timestamp">${new Date(item.timestamp).toLocaleString()}</div>
+                    </div>
+                `).join('');
+                
+            } catch (error) {
+                console.error('Error loading data:', error);
+                document.getElementById('incomingDataList').innerHTML = 
+                    '<div class="data-item">Ошибка загрузки данных</div>';
+            }
+        }
+
+        // Load Analytics
+        async function loadAnalytics() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/stats`);
+                const stats = await response.json();
+                
+                const analyticsDiv = document.getElementById('analyticsContent');
+                
+                analyticsDiv.innerHTML = `
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                        <div style="text-align: center; padding: 16px; background: var(--ios-bg); border-radius: 10px;">
+                            <div style="font-size: 24px; font-weight: bold;">${stats.totalMessages}</div>
+                            <div style="font-size: 12px; color: var(--ios-text-secondary);">Всего сообщений</div>
+                        </div>
+                        <div style="text-align: center; padding: 16px; background: var(--ios-bg); border-radius: 10px;">
+                            <div style="font-size: 24px; font-weight: bold;">${stats.totalDataPoints}</div>
+                            <div style="font-size: 12px; color: var(--ios-text-secondary);">Входящих данных</div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 16px;">
+                        <h4 style="margin-bottom: 12px;">Статистика по каналам:</h4>
+                        ${Object.entries(stats.channels).map(([key, channel]) => `
+                            <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--ios-border);">
+                                <span>${getChannelName(key)}</span>
+                                <span>${channel.sent} отправок</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+                
+            } catch (error) {
+                console.error('Error loading analytics:', error);
+                document.getElementById('analyticsContent').innerHTML = 
+                    '<div class="data-item">Ошибка загрузки статистики</div>';
+            }
+        }
+
+        // Helper functions
+        function getChannelName(key) {
+            const names = {
+                telegram: '📱 Telegram',
+                vk: '👥 VKontakte',
+                email: '📧 Email',
+                whatsapp: '💬 WhatsApp',
+                sms: '📲 SMS'
+            };
+            return names[key] || key;
+        }
+
+        function showAlert(message) {
+            // Simple alert - you can replace with a proper iOS-style alert
+            alert(message);
+        }
+
+        async function toggleChannel(channelId) {
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/channels/${channelId}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ enabled: !document.querySelector(`input[value="${channelId}"]`).checked })
+                });
+                
+                if (response.ok) {
+                    loadChannels();
+                    showAlert('Настройки канала обновлены');
+                }
+            } catch (error) {
+                console.error('Error toggling channel:', error);
+                showAlert('Ошибка обновления канала');
+            }
+        }
+    </script>
+</body>
+</html>

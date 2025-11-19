@@ -1,94 +1,49 @@
-/* Additional Mobile-First Optimizations */
-@media (max-width: 480px) {
-    .hero-content h1 {
-        font-size: 1.8rem;
+/* Mobile First Styles for API Service */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
     }
     
-    .hero-subtitle {
-        font-size: 1rem;
+    .header {
+        padding: 16px;
+        margin-bottom: 16px;
     }
     
-    .hero-features {
-        flex-direction: column;
-        gap: 1rem;
+    .api-endpoints {
+        grid-template-columns: 1fr;
+        gap: 12px;
     }
     
-    .floating-card {
-        margin: 0 1rem;
-        padding: 1.5rem;
+    .endpoint-card {
+        padding: 12px;
     }
     
-    .service-card,
-    .advantage-card {
-        padding: 1.5rem 1rem;
-    }
-    
-    .portfolio-filter {
-        gap: 0.5rem;
-    }
-    
-    .filter-btn {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
-    }
-}
-
-/* Touch device optimizations */
-@media (hover: none) {
-    .service-card:hover,
-    .portfolio-item:hover,
-    .cta-button:hover {
-        transform: none;
-    }
-    
-    .nav-menu a:hover::after {
-        width: 0;
-    }
-}
-
-/* High-density displays */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .service-icon,
-    .advantage-icon {
-        image-rendering: -webkit-optimize-contrast;
-    }
-}
-
-/* Reduced motion for accessibility */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
+    .endpoint-path {
+        font-size: 12px;
+        word-break: break-all;
     }
 }
 
 /* Dark mode support */
 @media (prefers-color-scheme: dark) {
     :root {
-        --secondary: #1a1a1a;
-        --text: #ffffff;
-        --text-light: #cccccc;
-        --border: #333333;
-    }
-    
-    .service-card,
-    .floating-card {
-        background: #2d2d2d;
-        color: white;
+        --ios-bg: #000000;
+        --ios-card-bg: #1c1c1e;
+        --ios-border: #38383a;
+        --ios-primary: #0a84ff;
+        --ios-text: #ffffff;
     }
 }
 
-/* Print styles */
-@media print {
-    .floating-whatsapp,
-    .nav-toggle,
-    .cta-button {
-        display: none !important;
+/* High contrast support */
+@media (prefers-contrast: high) {
+    :root {
+        --ios-border: #000000;
+        --ios-text: #000000;
     }
     
-    .hero {
-        background: #f0f0f0 !important;
-        color: black !important;
+    [data-theme="dark"] {
+        --ios-border: #ffffff;
+        --ios-text: #ffffff;
     }
 }
